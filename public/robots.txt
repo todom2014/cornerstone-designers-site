@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# The intake and the two confirmation pages carry <meta name="robots"
+# content="noindex">. That is deliberately NOT reinforced with a Disallow here:
+# a disallowed page can't be crawled, so the noindex is never read, and a page
+# that picks up a stray inbound link can end up indexed anyway. Letting the
+# crawler in to see the noindex is what actually keeps them out of the index.
+
+Sitemap: https://cornerstonedesigners.com/sitemap.xml

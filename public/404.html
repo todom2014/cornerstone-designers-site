@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<!-- The site has its own dark theme, so browser dark-mode extensions stand down. -->
+<meta name="darkreader-lock">
+<script src="/theme.js"></script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<title>Page not found — Cornerstone Designers</title>
+<meta name="description" content="That page isn't here.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ===========================================================================
+   Cornerstone Designers — 404. Netlify serves this for any missing path,
+   so every asset link is root-absolute (/theme.js, not theme.js).
+   =========================================================================== */
+:root{
+  --paper:#EEF0F4;
+  --paper-2:#E2E6EC;
+  --ink:#0F1A3D;
+  --ink-2:#363F52;
+  --blue:#1E3BB0;
+  --green:#1F6F52;
+  --rule:#C3C9D3;
+  /* Tokens the dark theme swaps. */
+  --btn-bg:#1E3BB0;
+  --btn-fg:#EEF0F4;
+  --btn-hover-bg:#0F1A3D;
+  --btn-hover-fg:#EEF0F4;
+  --placeholder:#5B6475;
+  color-scheme:light;
+
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --gutter:clamp(1.25rem,5vw,3.5rem);
+  --shell:46rem;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(1rem,0.96rem + 0.2vw,1.0625rem);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+a{color:var(--blue);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+
+.skip{
+  position:absolute;left:-9999px;top:0;
+  background:var(--ink);color:var(--paper);
+  padding:.75rem 1.25rem;z-index:100;
+  font-family:var(--mono);font-size:.8125rem;
+}
+.skip:focus{left:0}
+
+.shell{width:100%;max-width:var(--shell);margin-inline:auto;padding-inline:var(--gutter)}
+
+.masthead{border-bottom:1px solid var(--rule)}
+.masthead > .shell{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;padding-block:1rem;
+}
+.wordmark{
+  font-family:var(--display);font-weight:700;font-size:1.0625rem;
+  letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap;
+}
+.wordmark span{color:var(--blue)}
+.back{
+  font-family:var(--mono);font-size:.75rem;letter-spacing:.09em;
+  text-transform:uppercase;text-decoration:none;color:var(--ink-2);
+}
+.back:hover{color:var(--blue);text-decoration:underline}
+
+main{flex:1}
+main > .shell{padding-block:clamp(3rem,7vw,5.5rem)}
+
+/* The received stamp — a drawing gets stamped when it lands on a desk. */
+.stamp{
+  display:inline-flex;align-items:center;gap:.6rem;
+  border:1px solid var(--green);
+  color:var(--green);
+  font-family:var(--mono);font-size:.75rem;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:.5rem .85rem;margin-bottom:2rem;
+}
+.stamp::before{
+  content:"";width:7px;height:7px;border-radius:50%;
+  background:var(--green);flex:none;
+}
+
+h1{
+  font-family:var(--display);font-weight:600;line-height:1.08;
+  letter-spacing:-.03em;margin:0 0 1.5rem;
+  font-size:clamp(2rem,1.5rem + 2.4vw,3.1rem);
+  max-width:17ch;text-wrap:balance;
+}
+
+p{margin:0 0 1.1em;max-width:54ch}
+p:last-child{margin-bottom:0}
+
+.lede{
+  font-size:clamp(1.05rem,1rem + .35vw,1.2rem);
+  line-height:1.55;color:var(--ink-2);max-width:46ch;
+}
+
+h2{
+  font-family:var(--mono);font-weight:400;font-size:.75rem;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--blue);
+  margin:clamp(2.75rem,5vw,3.75rem) 0 0;
+  display:flex;align-items:center;gap:.75rem;
+}
+h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+
+/* What happens next */
+.steps{
+  list-style:none;counter-reset:step;
+  margin:1.75rem 0 0;padding:0;
+  border-top:1px solid var(--rule);
+}
+.steps li{
+  counter-increment:step;
+  border-bottom:1px solid var(--rule);
+  padding:1.35rem 0;
+  display:grid;grid-template-columns:2.5rem 1fr;gap:.3rem 1.25rem;
+}
+.steps li::before{
+  content:counter(step,decimal-leading-zero);
+  font-family:var(--mono);font-size:.8125rem;color:var(--blue);
+  grid-row:span 2;
+}
+.steps h3{
+  font-family:var(--display);font-weight:600;font-size:1.05rem;
+  letter-spacing:-.012em;margin:0;
+}
+.steps p{margin:0;font-size:.9375rem;color:var(--ink-2);max-width:52ch}
+
+.actions{
+  display:flex;flex-wrap:wrap;gap:.75rem;
+  margin-top:clamp(2.25rem,4.5vw,3rem);
+}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.8125rem;letter-spacing:.08em;
+  text-transform:uppercase;padding:.95rem 1.6rem;
+  border:1px solid var(--blue);text-decoration:none;cursor:pointer;
+  transition:background-color .15s ease,color .15s ease,border-color .15s ease;
+}
+.btn-primary{background:var(--btn-bg);border-color:var(--btn-bg);color:var(--btn-fg)}
+.btn-primary:hover{background:var(--btn-hover-bg);border-color:var(--btn-hover-bg);color:var(--btn-hover-fg)}
+.btn-ghost{background:transparent;color:var(--blue)}
+.btn-ghost:hover{background:var(--blue);color:var(--paper)}
+
+.aside{
+  margin-top:clamp(2.5rem,5vw,3.5rem);
+  border:1px solid var(--rule);
+  background:var(--paper-2);
+  padding:1.35rem 1.5rem;
+}
+.aside p{font-size:.9375rem;color:var(--ink-2);max-width:58ch}
+.aside p + p{margin-top:.8em}
+
+.colophon{background:#132B86;color:#DCE1E9}
+.colophon > .shell{
+  padding-block:2rem;display:flex;flex-wrap:wrap;
+  gap:1rem 2rem;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:.75rem;
+}
+.colophon p{margin:0;max-width:none}
+.colophon a{color:#FFFFFF}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.001ms !important;animation-duration:.001ms !important}
+}
+@media print{ .masthead,.actions{display:none} }
+
+/* --- Dark theme ----------------------------------------------------------
+   Deep navy, silver text, royal-blue accents. Follows the visitor's system
+   setting unless they pick a theme with the header toggle (theme.js).
+   Every text pair is 6:1 or better; body copy is 9.9:1.
+   ------------------------------------------------------------------------ */
+
+:root[data-theme="dark"]{
+  --paper:#0B1330;
+  --paper-2:#141E47;
+  --ink:#E8ECF3;
+  --ink-2:#B7BFCE;
+  --blue:#9DB0FF;
+  --green:#62C79E;
+  --red:#F0907A;
+  --rule:#2A3563;
+  --rule-2:#6F7B9C;
+  --btn-bg:#2E54DD;
+  --btn-fg:#FFFFFF;
+  --btn-hover-bg:#E8ECF3;
+  --btn-hover-fg:#0B1330;
+  --placeholder:#8E98AE;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+  --paper:#0B1330;
+  --paper-2:#141E47;
+  --ink:#E8ECF3;
+  --ink-2:#B7BFCE;
+  --blue:#9DB0FF;
+  --green:#62C79E;
+  --red:#F0907A;
+  --rule:#2A3563;
+  --rule-2:#6F7B9C;
+  --btn-bg:#2E54DD;
+  --btn-fg:#FFFFFF;
+  --btn-hover-bg:#E8ECF3;
+  --btn-hover-fg:#0B1330;
+  --placeholder:#8E98AE;
+  color-scheme:dark;
+  }
+}
+
+/* --- Theme toggle ------------------------------------------------------- */
+
+.head-actions{display:flex;align-items:center;gap:.75rem}
+
+.theme-toggle{
+  display:none;
+  align-items:center;justify-content:center;
+  width:2.5rem;height:2.5rem;flex:none;padding:0;
+  background:transparent;color:var(--ink-2);
+  border:1px solid var(--rule);border-radius:0;cursor:pointer;
+}
+.js .theme-toggle{display:inline-flex}
+.theme-toggle:hover{color:var(--blue);border-color:var(--blue)}
+.theme-toggle svg{width:1.15rem;height:1.15rem}
+.theme-toggle .sun{display:none}
+.theme-toggle[aria-pressed="true"] .sun{display:block}
+.theme-toggle[aria-pressed="true"] .moon{display:none}
+
+.visually-hidden{
+  position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="shell">
+    <a class="wordmark" href="/">Cornerstone<span>&nbsp;Designers</span></a>
+    <div class="head-actions">
+      <a class="back" href="/">&larr; Back to the site</a>
+      <button class="theme-toggle" type="button" aria-pressed="false" title="Dark mode">
+        <span class="visually-hidden">Dark mode</span>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a6.6 6.6 0 0 0 9.7 9.7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="shell">
+    <p class="stamp">404 &middot; Not found</p>
+
+    <h1>That page isn&rsquo;t on the drawing.</h1>
+
+    <p class="lede">The link may be old, or the address may have a typo. Everything on the site starts from the home page.</p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="/">Go to the home page</a>
+      <a class="btn btn-ghost" href="/#pricing">See the prices</a>
+    </div>
+
+    <div class="aside">
+      <p><strong>Looking for something specific?</strong> Write to <a href="mailto:hello@cornerstonedesigners.com">hello@cornerstonedesigners.com</a> or call <a href="tel:+18037685337">(803) 768-5337</a>.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="colophon">
+  <div class="shell">
+    <p>&copy; 2026 Cornerstone Designers</p>
+    <p>Fixed prices, published &nbsp;&middot;&nbsp; <a href="/#scope">See scope</a> &nbsp;&middot;&nbsp; <a href="/privacy">Privacy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

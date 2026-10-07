@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cornerstone Designers blog</title>
+    <link>https://cornerstonedesigners.com/blog/</link>
+    <atom:link href="https://cornerstonedesigners.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Plain answers about websites, prices and getting found, from a fixed-price web studio in Newberry, SC.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Choosing a web designer in Columbia, SC: what to look for</title>
+      <link>https://cornerstonedesigners.com/blog/web-designer-columbia-sc/</link>
+      <guid isPermaLink="true">https://cornerstonedesigners.com/blog/web-designer-columbia-sc/</guid>
+      <pubDate>Sat, 03 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Hiring a designer</category>
+      <description>How to choose a web designer in Columbia, SC: whether local matters, what a Midlands business site needs, how to vet a designer, and free help.</description>
+    </item>
+    <item>
+      <title>7 signs your website needs a redesign</title>
+      <link>https://cornerstonedesigners.com/blog/signs-website-needs-redesign/</link>
+      <guid isPermaLink="true">https://cornerstonedesigners.com/blog/signs-website-needs-redesign/</guid>
+      <pubDate>Tue, 29 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Redesigns</category>
+      <description>Seven signs your website needs a redesign, how to check each one yourself in a few minutes, and when a smaller fix will do instead.</description>
+    </item>
+    <item>
+      <title>How to set up a Google Business Profile for a service-area business</title>
+      <link>https://cornerstonedesigners.com/blog/google-business-profile-service-area-business/</link>
+      <guid isPermaLink="true">https://cornerstonedesigners.com/blog/google-business-profile-service-area-business/</guid>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Local search</category>
+      <description>How to set up a Google Business Profile for a service-area business, from Google's own rules: address, service areas, name, category, verification.</description>
+    </item>
+    <item>
+      <title>12 questions to ask before you hire a web designer</title>
+      <link>https://cornerstonedesigners.com/blog/questions-to-ask-before-hiring-a-web-designer/</link>
+      <guid isPermaLink="true">https://cornerstonedesigners.com/blog/questions-to-ask-before-hiring-a-web-designer/</guid>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Hiring a designer</category>
+      <description>The questions that separate a good web designer from an expensive mistake, with the answers to listen for, from a studio in Newberry, SC.</description>
+    </item>
+    <item>
+      <title>Do accessibility widgets make your website ADA compliant?</title>
+      <link>https://cornerstonedesigners.com/blog/accessibility-overlays-ada-compliance/</link>
+      <guid isPermaLink="true">https://cornerstonedesigners.com/blog/accessibility-overlays-ada-compliance/</guid>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Accessibility</category>
+      <description>No. The FTC fined the best-known widget maker $1 million over that exact claim. Here's what the widgets do, what the lawsuits show, and what actually works.</description>
+    </item>
+    <item>
+      <title>How much does a small business website cost in South Carolina? (2026)</title>
+      <link>https://cornerstonedesigners.com/blog/small-business-website-cost-south-carolina/</link>
+      <guid isPermaLink="true">https://cornerstonedesigners.com/blog/small-business-website-cost-south-carolina/</guid>
+      <pubDate>Sat, 26 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Pricing</category>
+      <description>Real 2026 price ranges for a small business website, from DIY builders to agencies, the yearly costs nobody quotes you, and our own published prices.</description>
+    </item>
+  </channel>
+</rss>

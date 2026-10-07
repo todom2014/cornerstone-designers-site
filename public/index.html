@@ -1,0 +1,1993 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<!-- The site has its own dark theme, so browser dark-mode extensions stand down. -->
+<meta name="darkreader-lock">
+<script src="theme.js"></script>
+<script src="hero-video.js" defer></script>
+<script src="menu.js" defer></script>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Fixed-Price Web Design in Columbia &amp; Newberry, SC | Cornerstone Designers</title>
+<meta name="description" content="Fixed-price websites for South Carolina businesses, from Newberry and Columbia to the Upstate. Prices published up front: $4,500, $8,500, $15,000+.">
+<link rel="canonical" href="https://cornerstonedesigners.com/">
+<link rel="alternate" type="application/rss+xml" title="Cornerstone Designers blog" href="/feed.xml">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cornerstonedesigners.com/">
+<meta property="og:title" content="Cornerstone Designers — Websites with the price printed on the page">
+<meta property="og:description" content="Fixed prices, published. Websites for any business — small businesses, online stores, professional services and practices. South Carolina and remote.">
+<meta property="og:site_name" content="Cornerstone Designers">
+<meta property="og:image" content="https://cornerstonedesigners.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cornerstone Designers — websites with the price printed on the page. Starter Site $4,500, Business Site $8,500, Custom Build $15,000+.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ===========================================================================
+   Cornerstone Designers
+   A blueprint, not an agency site. Silver paper, hairline rules,
+   mono annotations, prices set as specifications.
+   =========================================================================== */
+
+:root{
+  --paper:#EEF0F4;
+  --paper-2:#E2E6EC;
+  --ink:#0F1A3D;
+  --ink-2:#363F52;
+  --blue:#1E3BB0;
+  --green:#1F6F52;
+  --red:#98432F;
+  --rule:#C3C9D3;
+  /* Tokens the dark theme swaps. */
+  --btn-bg:#1E3BB0;
+  --btn-fg:#EEF0F4;
+  --btn-hover-bg:#0F1A3D;
+  --btn-hover-fg:#EEF0F4;
+  --placeholder:#5B6475;
+  color-scheme:light;
+
+  /* The contact section and footer sit on deep royal blue. Text there is
+     near-white silver (9.3:1) and links are white (12:1) — a pale blue or a
+     mid silver measures fine but reads too close to the blue behind it. */
+  --royal-deep:#132B86;
+  --blue-lift:#FFFFFF;
+  --paper-dim:#DCE1E9;
+  --silver-lt:#E4E8EE;
+
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --gutter:clamp(1.25rem,5vw,3.5rem);
+  --measure:38rem;
+  --shell:76rem;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(1rem,0.96rem + 0.2vw,1.0625rem);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{max-width:100%;height:auto;display:block}
+
+a{color:var(--blue);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+
+:focus-visible{
+  outline:2px solid var(--blue);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+.skip{
+  position:absolute;left:-9999px;top:0;
+  background:var(--ink);color:var(--paper);
+  padding:.75rem 1.25rem;z-index:100;
+  font-family:var(--mono);font-size:.8125rem;
+}
+.skip:focus{left:0}
+
+/* --- Shared layout ------------------------------------------------------ */
+
+.shell{
+  width:100%;
+  max-width:var(--shell);
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+
+section{border-top:1px solid var(--rule)}
+section > .shell{padding-block:clamp(3.5rem,7vw,6rem)}
+
+/* --- Typography --------------------------------------------------------- */
+
+h1,h2,h3,h4{
+  font-family:var(--display);
+  font-weight:600;
+  line-height:1.08;
+  letter-spacing:-.02em;
+  margin:0;
+  text-wrap:balance;
+}
+
+h1{font-size:clamp(2.4rem,1.5rem + 4.4vw,4.5rem);letter-spacing:-.032em}
+h2{font-size:clamp(1.75rem,1.35rem + 1.9vw,2.75rem)}
+h3{font-size:clamp(1.15rem,1.05rem + .45vw,1.4rem);letter-spacing:-.012em}
+
+p{margin:0 0 1.1em;max-width:var(--measure)}
+p:last-child{margin-bottom:0}
+
+.lede{
+  font-size:clamp(1.125rem,1.03rem + .45vw,1.375rem);
+  line-height:1.5;
+  color:var(--ink-2);
+  max-width:34ch;
+}
+
+.prose{color:var(--ink-2)}
+.prose strong{color:var(--ink);font-weight:600}
+
+/* Mono annotations — the drawing labels of the blueprint. */
+.anno{
+  font-family:var(--mono);
+  font-weight:500;
+  font-size:.75rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin:0 0 1.25rem;
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  max-width:none;
+}
+.anno::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:var(--rule);
+}
+.anno-plain{color:var(--ink-2)}
+.anno-plain::after{display:none}
+
+/* --- Buttons ------------------------------------------------------------ */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  font-family:var(--mono);
+  font-size:.8125rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding:.9rem 1.5rem;
+  border:1px solid var(--blue);
+  text-decoration:none;
+  cursor:pointer;
+  transition:background-color .15s ease,color .15s ease;
+}
+@media (prefers-reduced-motion:reduce){ .btn{transition:none} }
+
+.btn-primary{background:var(--btn-bg);border-color:var(--btn-bg);color:var(--btn-fg)}
+.btn-primary:hover{background:var(--btn-hover-bg);border-color:var(--btn-hover-bg);color:var(--btn-hover-fg)}
+
+.btn-ghost{background:transparent;color:var(--blue)}
+.btn-ghost:hover{background:var(--blue);color:var(--paper)}
+
+/* --- Header ------------------------------------------------------------- */
+
+.masthead{
+  border-bottom:1px solid var(--rule);
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(8px);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.masthead > .shell{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.5rem;
+  padding-block:1rem;
+}
+
+.wordmark{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:1.0625rem;
+  letter-spacing:-.02em;
+  color:var(--ink);
+  text-decoration:none;
+  white-space:nowrap;
+}
+.wordmark span{color:var(--blue)}
+
+.masthead nav{display:none}
+.masthead nav ul{
+  display:flex;
+  gap:1.75rem;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.masthead nav a{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:var(--ink-2);
+  text-decoration:none;
+}
+.masthead nav a:hover{color:var(--blue);text-decoration:underline}
+
+.masthead .btn{padding:.6rem 1rem;font-size:.75rem}
+
+@media (min-width:62rem){ .masthead nav{display:block} }
+
+/* --- Hero --------------------------------------------------------------- */
+
+.hero{border-top:0}
+.hero > .shell{padding-block:clamp(3.5rem,8vw,7rem) clamp(2.5rem,5vw,4rem)}
+
+.hero-eyebrow{
+  font-family:var(--mono);
+  font-weight:500;
+  font-size:.75rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin:0 0 1.75rem;
+}
+
+.hero h1{max-width:16ch;margin-bottom:1.75rem}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin-top:2rem;
+}
+
+.availability{
+  font-family:var(--mono);
+  font-size:.8125rem;
+  color:var(--ink-2);
+  margin:1.5rem 0 0;
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+}
+.availability::before{
+  content:"";
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--green);
+  flex:none;
+}
+
+/* --- Hero video ------------------------------------------------------------
+   Turquoise water washing over white sand, behind the headline only. A navy
+   wash over the footage keeps every line of hero text at 4.5:1 or better on
+   the brightest frame; the spec strip keeps its solid panel. It looks the
+   same in light and dark. On phones (below 48rem), without JavaScript, with
+   reduced motion or with Data Saver on, the still poster shows instead
+   (hero-video.js). The
+   Pause/Play button covers WCAG 2.2.2 for moving content.
+   ------------------------------------------------------------------------ */
+
+.hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background:#0B1330;
+  color:#FFFFFF;
+}
+.hero-media{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.hero-media video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-media::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(6,22,40,.68);
+}
+/* Wide screens: dark behind the text column, then the water shows through. */
+@media (min-width:62rem){
+  .hero-media::after{
+    --text-edge:calc(max(var(--gutter),(100% - var(--shell)) / 2 + var(--gutter)) + 46rem);
+    background:linear-gradient(90deg,
+      rgba(6,22,40,.82) 0,
+      rgba(6,22,40,.72) var(--text-edge),
+      rgba(6,22,40,.2) calc(var(--text-edge) + 14rem),
+      rgba(6,22,40,.2) 100%);
+  }
+}
+.hero > .shell{position:relative}
+.hero .hero-eyebrow{color:#C9D5FF}
+.hero .lede,.hero .availability{color:#E1E7F2}
+.hero .availability::before{background:#62C79E}
+.hero .btn-primary:hover{background:#FFFFFF;border-color:#FFFFFF;color:#0B1330}
+.hero .btn-ghost{color:#FFFFFF;border-color:rgba(255,255,255,.85)}
+.hero .btn-ghost:hover{background:#FFFFFF;border-color:#FFFFFF;color:#0B1330}
+.hero :focus-visible{outline-color:#FFFFFF}
+.hero .specs{color:var(--ink)}
+
+.video-toggle{
+  position:absolute;
+  top:.9rem;
+  right:var(--gutter);
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  min-height:2rem;
+  font-family:var(--mono);
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#FFFFFF;
+  background:rgba(11,19,48,.72);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:0;
+  padding:.45rem .75rem;
+  cursor:pointer;
+}
+.video-toggle:hover{background:#0B1330;border-color:#FFFFFF}
+.video-toggle[hidden]{display:none}
+.video-toggle svg{width:.7rem;height:.7rem;flex:none}
+.video-toggle .i-play,.video-toggle.is-paused .i-pause{display:none}
+.video-toggle.is-paused .i-play{display:block}
+
+/* Spec strip — the title block of the drawing. */
+.specs{
+  margin:clamp(3rem,6vw,4.5rem) 0 0;
+  padding:0;
+  border:1px solid var(--rule);
+  /* Solid, not a gradient: dark-mode extensions recolor flat backgrounds
+     but leave gradients light, which left light text on a light strip. */
+  background:var(--paper-2);
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));
+}
+.specs > div{
+  padding:1.25rem 1.4rem;
+  border-top:1px solid var(--rule);
+  border-left:1px solid var(--rule);
+}
+.specs > div:nth-child(-n+2){border-top:0}
+.specs > div:nth-child(odd){border-left:0}
+
+.specs dt{
+  font-family:var(--mono);
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink-2);
+  margin-bottom:.5rem;
+}
+.specs dd{
+  margin:0;
+  font-family:var(--mono);
+  font-size:clamp(1.15rem,1.05rem + .5vw,1.5rem);
+  font-weight:500;
+  color:var(--ink);
+  letter-spacing:-.02em;
+}
+
+@media (min-width:52rem){
+  .specs{grid-template-columns:repeat(4,1fr)}
+  .specs > div{border-top:0}
+  .specs > div:nth-child(odd){border-left:1px solid var(--rule)}
+  .specs > div:first-child{border-left:0}
+}
+
+/* --- Two-column section scaffold ---------------------------------------- */
+
+.split{
+  display:grid;
+  gap:clamp(2rem,4vw,3.5rem);
+  align-items:start;
+}
+@media (min-width:56rem){
+  .split{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+}
+
+/* --- Promises ----------------------------------------------------------- */
+
+.promises{
+  list-style:none;
+  margin:2.5rem 0 0;
+  padding:0;
+  display:grid;
+  gap:0;
+  border:1px solid var(--rule);
+}
+.promises li{padding:1.4rem 1.5rem;border-top:1px solid var(--rule)}
+.promises li:first-child{border-top:0}
+.promises h3{margin-bottom:.4rem}
+.promises p{margin:0;color:var(--ink-2);font-size:.9375rem}
+
+@media (min-width:44rem){
+  .promises{grid-template-columns:1fr 1fr}
+  .promises li:nth-child(-n+2){border-top:0}
+  .promises li:nth-child(even){border-left:1px solid var(--rule)}
+}
+
+/* --- Services ----------------------------------------------------------- */
+
+.services{
+  list-style:none;
+  margin:2.5rem 0 0;
+  padding:0;
+  display:grid;
+  border:1px solid var(--rule);
+}
+.services li{padding:1.4rem 1.5rem;border-top:1px solid var(--rule)}
+.services li:first-child{border-top:0}
+.services h3{font-size:1.05rem;margin-bottom:.45rem}
+.services p{margin:0;color:var(--ink-2);font-size:.9375rem}
+.services h3 a{color:var(--ink);text-decoration-color:var(--rule)}
+.services h3 a:hover{color:var(--blue);text-decoration-color:currentColor}
+
+@media (min-width:44rem){
+  .services{grid-template-columns:1fr 1fr}
+  .services li:nth-child(-n+2){border-top:0}
+  .services li:nth-child(even){border-left:1px solid var(--rule)}
+}
+@media (min-width:68rem){
+  .services{grid-template-columns:repeat(4,1fr)}
+  .services li:nth-child(-n+4){border-top:0}
+  .services li:nth-child(even){border-left:0}
+  .services li:not(:nth-child(4n+1)){border-left:1px solid var(--rule)}
+}
+
+.industries{
+  margin:1.5rem 0 0;
+  max-width:none;
+  font-family:var(--mono);
+  font-size:.75rem;
+  line-height:1.9;
+  color:var(--ink-2);
+}
+.industries span{
+  color:var(--blue);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-right:.75rem;
+}
+
+/* --- Scope do / don't --------------------------------------------------- */
+
+.scope{
+  display:grid;
+  gap:0;
+  border:1px solid var(--rule);
+  margin-top:2.5rem;
+}
+@media (min-width:52rem){
+  .scope{grid-template-columns:1fr 1fr}
+  .scope-col + .scope-col{border-left:1px solid var(--rule);border-top:0}
+}
+
+.scope-col{padding:clamp(1.5rem,3vw,2.25rem)}
+.scope-col + .scope-col{border-top:1px solid var(--rule)}
+
+.scope-col h3{margin-bottom:1.5rem;font-size:1.05rem}
+.scope-col ul{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem}
+.scope-col li{
+  display:grid;
+  grid-template-columns:1.35rem 1fr;
+  gap:.75rem;
+  align-items:start;
+  font-size:.9375rem;
+  line-height:1.55;
+  color:var(--ink-2);
+}
+.scope-col li strong{display:block;color:var(--ink);font-weight:600}
+
+.mark{
+  font-family:var(--mono);
+  font-weight:500;
+  line-height:1.5;
+  font-size:1rem;
+}
+.mark-do{color:var(--green)}
+.mark-dont{color:var(--red)}
+
+.scope-note{
+  border:1px solid var(--rule);
+  border-top:0;
+  background:var(--paper-2);
+  padding:clamp(1.25rem,3vw,1.75rem);
+  font-size:.9375rem;
+  color:var(--ink-2);
+}
+.scope-note p{max-width:60ch}
+
+/* --- Pricing ------------------------------------------------------------ */
+
+.tiers{
+  display:grid;
+  gap:0;
+  border:1px solid var(--rule);
+  margin-top:2.5rem;
+}
+@media (min-width:58rem){ .tiers{grid-template-columns:repeat(3,1fr)} }
+
+.tier{
+  padding:clamp(1.5rem,3vw,2rem);
+  border-top:1px solid var(--rule);
+  display:flex;
+  flex-direction:column;
+}
+.tier:first-child{border-top:0}
+@media (min-width:58rem){
+  .tier{border-top:0;border-left:1px solid var(--rule)}
+  .tier:first-child{border-left:0}
+}
+
+.tier-feature{background:var(--paper-2)}
+
+.tier-tag{
+  font-family:var(--mono);
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:.85rem;
+  min-height:1.2em;
+}
+.tier h3{font-size:1.25rem;margin-bottom:.9rem}
+
+.tier-price{
+  font-family:var(--mono);
+  font-size:2.15rem;
+  font-weight:500;
+  letter-spacing:-.03em;
+  color:var(--ink);
+  line-height:1;
+  margin:0 0 .35rem;
+}
+.tier-time{
+  font-family:var(--mono);
+  font-size:.8125rem;
+  color:var(--ink-2);
+  margin:0 0 1.4rem;
+}
+/* :not([class]) so the tag, price and timing lines keep their own sizes */
+.tier > p:not([class]){font-size:.9375rem;color:var(--ink-2)}
+
+.tier ul{
+  list-style:none;
+  margin:1.25rem 0 0;
+  padding:1.25rem 0 0;
+  border-top:1px solid var(--rule);
+  display:grid;
+  gap:.65rem;
+  font-size:.9375rem;
+  color:var(--ink-2);
+}
+.tier li{padding-left:1.15rem;position:relative}
+.tier li::before{
+  content:"—";
+  position:absolute;
+  left:0;
+  color:var(--blue);
+  font-family:var(--mono);
+}
+
+.tier .btn{margin-top:auto;align-self:flex-start}
+.tier ul + .btn{margin-top:1.75rem}
+
+.support{
+  border:1px solid var(--rule);
+  border-top:0;
+  background:var(--paper-2);
+  padding:clamp(1.25rem,3vw,1.75rem);
+  display:grid;
+  gap:.75rem 2rem;
+  align-items:baseline;
+}
+@media (min-width:44rem){ .support{grid-template-columns:auto 1fr} }
+.support-price{
+  font-family:var(--mono);
+  font-size:1.35rem;
+  font-weight:500;
+  letter-spacing:-.02em;
+  white-space:nowrap;
+}
+.support p{margin:0}
+.support p:not(.support-price){font-size:.9375rem;color:var(--ink-2);max-width:60ch}
+
+.included{
+  margin-top:2.5rem;
+  border:1px solid var(--rule);
+  padding:clamp(1.5rem,3vw,2rem);
+}
+.included h3{font-size:1.05rem;margin-bottom:1.25rem}
+.included ul{
+  list-style:none;
+  margin:0;padding:0;
+  display:grid;
+  gap:.7rem 2rem;
+  font-size:.9375rem;
+  color:var(--ink-2);
+}
+@media (min-width:44rem){ .included ul{grid-template-columns:1fr 1fr} }
+@media (min-width:68rem){ .included ul{grid-template-columns:repeat(3,1fr)} }
+.included li{padding-left:1.35rem;position:relative}
+.included li::before{
+  content:"+";
+  position:absolute;left:0;
+  color:var(--blue);
+  font-family:var(--mono);
+}
+
+/* --- Work --------------------------------------------------------------- */
+
+.cases{
+  display:grid;
+  gap:0;
+  border:1px solid var(--rule);
+  margin-top:2.5rem;
+}
+@media (min-width:58rem){ .cases{grid-template-columns:repeat(3,1fr)} }
+
+.case{
+  border-top:1px solid var(--rule);
+  display:flex;
+  flex-direction:column;
+}
+.case:first-child{border-top:0}
+@media (min-width:58rem){
+  .case{border-top:0;border-left:1px solid var(--rule)}
+  .case:first-child{border-left:0}
+}
+
+.case-plate{
+  aspect-ratio:4/3;
+  background:var(--paper-2);
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  place-items:center;
+}
+.case-plate span{
+  font-family:var(--mono);
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink-2);
+  border:1px solid var(--rule);
+  background:var(--paper);
+  padding:.4rem .7rem;
+}
+
+.case-body{padding:clamp(1.4rem,3vw,1.85rem);display:grid;gap:1.1rem}
+.case h3{font-size:1.1rem}
+.case dl{margin:0;display:grid;gap:1rem}
+.case dt{
+  font-family:var(--mono);
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:.3rem;
+}
+.case dd{margin:0;font-size:.9375rem;color:var(--ink-2);line-height:1.55}
+
+/* One project so far: the screenshot sits beside the write-up on wide screens */
+.case-shot{
+  margin:0;
+  padding:clamp(1rem,3vw,1.75rem);
+  background:var(--paper-2);
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  gap:.75rem;
+  align-content:center;
+}
+.case-shot img{width:100%;border:1px solid var(--rule)}
+.case-shot figcaption{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:1rem;
+  font-family:var(--mono);
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink-2);
+}
+.case-meta{
+  margin:0;
+  font-family:var(--mono);
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--ink-2);
+}
+.case-link{margin:0;font-weight:600}
+@media (min-width:58rem){
+  .cases-one{grid-template-columns:1fr}
+  .case-feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+  .case-feature .case-shot{border-bottom:0;border-right:1px solid var(--rule)}
+}
+
+/* --- Partners ----------------------------------------------------------- */
+
+.partners{
+  display:grid;
+  gap:0;
+  border:1px solid var(--rule);
+  margin-top:2.5rem;
+}
+/* One card for now; back to 1fr 1fr at 52rem when the second partner returns. */
+
+.partner{padding:clamp(1.5rem,3vw,2.25rem);border-top:1px solid var(--rule)}
+.partner:first-child{border-top:0}
+@media (min-width:52rem){
+  .partner{border-top:0;border-left:1px solid var(--rule)}
+  .partner:first-child{border-left:0}
+}
+
+.partner h3{margin-bottom:.35rem}
+.partner-loc{
+  font-family:var(--mono);
+  font-size:.75rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin:0 0 1.1rem;
+}
+.partner p{font-size:.9375rem;color:var(--ink-2)}
+.partner .partner-bio{max-width:var(--measure);margin-top:1.1rem}
+.partner .partner-link{margin:0;font-weight:600}
+
+/* --- Process ------------------------------------------------------------ */
+
+.steps{
+  list-style:none;
+  counter-reset:step;
+  margin:2.5rem 0 0;
+  padding:0;
+  border-top:1px solid var(--rule);
+}
+.steps li{
+  counter-increment:step;
+  border-bottom:1px solid var(--rule);
+  padding:1.6rem 0;
+  display:grid;
+  gap:.35rem 1.5rem;
+  grid-template-columns:2.5rem 1fr;
+}
+@media (min-width:52rem){
+  .steps li{grid-template-columns:2.5rem minmax(0,15rem) minmax(0,1fr);align-items:baseline}
+}
+.steps li::before{
+  content:counter(step,decimal-leading-zero);
+  font-family:var(--mono);
+  font-size:.8125rem;
+  color:var(--blue);
+  grid-row:span 2;
+}
+@media (min-width:52rem){ .steps li::before{grid-row:auto} }
+.steps h3{font-size:1.05rem}
+.steps p{margin:0;font-size:.9375rem;color:var(--ink-2)}
+.steps .when{
+  font-family:var(--mono);
+  font-size:.75rem;
+  color:var(--ink-2);
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+/* --- Coverage ----------------------------------------------------------- */
+
+.regions{
+  display:grid;
+  gap:0;
+  border:1px solid var(--rule);
+  margin-top:2.5rem;
+}
+@media (min-width:52rem){ .regions{grid-template-columns:repeat(2,1fr)} }
+
+.region{padding:clamp(1.5rem,3vw,2rem);border-top:1px solid var(--rule)}
+.region:first-child{border-top:0}
+@media (min-width:52rem){
+  .region{border-top:0;border-left:1px solid var(--rule)}
+  .region:first-child{border-left:0}
+}
+.region h3{font-size:1.05rem;margin-bottom:.75rem}
+.region p{font-size:.9375rem;color:var(--ink-2)}
+.region-places{
+  font-family:var(--mono);
+  font-size:.75rem;
+  line-height:1.9;
+  color:var(--ink-2);
+  margin-top:1rem;
+}
+
+/* --- Latest posts (filled by tools/build-blog.mjs) ---------------------- */
+
+.latest{
+  list-style:none;margin:2.5rem 0 0;padding:0;
+  display:grid;border:1px solid var(--rule);
+}
+@media (min-width:52rem){ .latest{grid-template-columns:repeat(3,1fr)} }
+.latest li{padding:1.5rem;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:.6rem}
+.latest li:first-child{border-top:0}
+@media (min-width:52rem){
+  .latest li{border-top:0;border-left:1px solid var(--rule)}
+  .latest li:first-child{border-left:0}
+}
+.latest .meta{font-family:var(--mono);font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0}
+.latest h3{font-size:1.1rem;margin:0}
+.latest h3 a{color:var(--ink);text-decoration:none}
+.latest h3 a:hover{color:var(--blue);text-decoration:underline}
+.latest p{font-size:.9375rem;color:var(--ink-2);margin:0}
+
+/* --- FAQ ---------------------------------------------------------------- */
+
+.faq{margin-top:2.5rem;border-top:1px solid var(--rule)}
+
+.faq details{border-bottom:1px solid var(--rule)}
+
+.faq summary{
+  cursor:pointer;
+  list-style:none;
+  padding:1.35rem 2.5rem 1.35rem 0;
+  position:relative;
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(1.02rem,.98rem + .25vw,1.15rem);
+  letter-spacing:-.012em;
+  color:var(--ink);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";
+  position:absolute;
+  right:.25rem;
+  top:1.25rem;
+  font-family:var(--mono);
+  font-size:1.15rem;
+  color:var(--blue);
+  line-height:1;
+}
+.faq details[open] summary::after{content:"–"}
+.faq summary:hover{color:var(--blue)}
+
+.faq-answer{padding:0 0 1.6rem}
+
+.faq-group{
+  font-family:var(--mono);
+  font-weight:400;
+  font-size:.75rem;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  color:var(--blue);
+  margin:2.75rem 0 0;
+  padding:0 0 1rem;
+  border-bottom:1px solid var(--rule);
+}
+.faq-answer p{font-size:.9375rem;color:var(--ink-2)}
+
+/* --- Contact (dark) ----------------------------------------------------- */
+
+.contact,.colophon{
+  --paper:#EEF0F4;--paper-2:#E2E6EC;--ink:#0F1A3D;--ink-2:#363F52;--blue:#1E3BB0;--rule:#C3C9D3;
+  --btn-bg:#1E3BB0;--btn-fg:#EEF0F4;--btn-hover-bg:#0F1A3D;--btn-hover-fg:#EEF0F4;
+}
+.contact{background:var(--royal-deep);color:var(--paper);border-top:0}
+.contact h2{color:var(--paper)}
+.contact .anno{color:var(--blue-lift)}
+.contact .anno::after{background:rgba(238,240,244,.18)}
+.contact .lede,.contact p{color:var(--paper-dim)}
+.contact a{color:var(--blue-lift)}
+
+.channels{
+  list-style:none;
+  margin:2.5rem 0 0;
+  padding:0;
+  display:grid;
+  gap:0;
+  border:1px solid rgba(238,240,244,.18);
+}
+@media (min-width:52rem){ .channels{grid-template-columns:repeat(2,1fr)} }
+.channels li{padding:1.4rem 1.5rem;border-top:1px solid rgba(238,240,244,.18)}
+.channels li:first-child{border-top:0}
+@media (min-width:52rem){
+  .channels li{border-top:0;border-left:1px solid rgba(238,240,244,.18)}
+  .channels li:first-child{border-left:0}
+}
+.channels dt,.channel-label{
+  font-family:var(--mono);
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--paper-dim);
+  margin-bottom:.5rem;
+}
+.channel-value{
+  font-family:var(--mono);
+  font-size:1.05rem;
+  color:var(--paper);
+}
+.channel-value a{color:var(--blue-lift);text-decoration:none}
+/* The email address is wider than a 360px phone in mono; let it break. */
+.channel-value{overflow-wrap:anywhere}
+.channel-value a:hover{text-decoration:underline}
+
+/* --- Forms -------------------------------------------------------------- */
+
+.form-wrap{
+  margin-top:3rem;
+  border:1px solid rgba(238,240,244,.18);
+  padding:clamp(1.5rem,3.5vw,2.5rem);
+}
+.form-wrap h3{color:var(--paper);font-size:1.2rem;margin-bottom:.6rem}
+.form-wrap > p{font-size:.9375rem;margin-bottom:2rem}
+
+.field-grid{
+  display:grid;
+  gap:1.5rem;
+}
+@media (min-width:44rem){
+  .field-grid{grid-template-columns:1fr 1fr}
+  .field-full{grid-column:1/-1}
+}
+
+.field label{
+  display:block;
+  font-family:var(--mono);
+  font-size:.6875rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--paper-dim);
+  margin-bottom:.55rem;
+}
+.field .opt{text-transform:none;letter-spacing:0;color:var(--paper-dim)}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  font-family:var(--body);
+  font-size:1rem;
+  color:var(--paper);
+  background:rgba(238,240,244,.06);
+  border:1px solid rgba(238,240,244,.5);
+  border-radius:0;
+  padding:.75rem .85rem;
+  appearance:none;
+}
+.field textarea{min-height:8rem;resize:vertical}
+.field select{
+  background-image:linear-gradient(45deg,transparent 50%,var(--paper-dim) 50%),linear-gradient(135deg,var(--paper-dim) 50%,transparent 50%);
+  background-position:calc(100% - 1.15rem) 1.35rem,calc(100% - .8rem) 1.35rem;
+  background-size:6px 6px,6px 6px;
+  background-repeat:no-repeat;
+  padding-right:2.5rem;
+}
+.field select option{background:var(--royal-deep);color:var(--paper)}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible{
+  outline:2px solid var(--blue-lift);
+  outline-offset:2px;
+  border-color:transparent;
+}
+
+.field-help{
+  font-size:.8125rem;
+  color:var(--paper-dim);
+  margin:.5rem 0 0;
+}
+
+.hp{position:absolute;left:-9999px}
+
+.form-actions{
+  margin-top:2rem;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:1.25rem;
+}
+.form-wrap .btn-primary{
+  background:var(--silver-lt);
+  border-color:var(--silver-lt);
+  color:var(--ink);
+}
+.form-wrap .btn-primary:hover{background:#FFFFFF;border-color:#FFFFFF}
+
+.privacy-note{
+  font-size:.8125rem;
+  color:var(--paper-dim);
+  max-width:46ch;
+  margin:0;
+}
+
+/* --- Footer ------------------------------------------------------------- */
+
+.colophon{background:var(--royal-deep);color:var(--paper-dim);border-top:1px solid rgba(238,240,244,.18)}
+.colophon > .shell{
+  padding-block:2rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem 2rem;
+  justify-content:space-between;
+  align-items:center;
+  font-family:var(--mono);
+  font-size:.75rem;
+}
+.colophon p{margin:0;max-width:none}
+.colophon a{color:var(--blue-lift)}
+
+/* --- Motion ------------------------------------------------------------- */
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.001ms !important;
+  }
+}
+
+/* --- Print -------------------------------------------------------------- */
+
+@media print{
+  .masthead,.form-wrap,.hero-media,.video-toggle{display:none}
+  .hero{background:#fff;color:#000}
+  .contact,.colophon{background:#fff;color:#000}
+  section{break-inside:avoid}
+}
+
+/* --- Dark theme ----------------------------------------------------------
+   Deep navy, silver text, royal-blue accents. Follows the visitor's system
+   setting unless they pick a theme with the header toggle (theme.js).
+   Every text pair is 6:1 or better; body copy is 9.9:1.
+   ------------------------------------------------------------------------ */
+
+:root[data-theme="dark"]{
+  --paper:#0B1330;
+  --paper-2:#141E47;
+  --ink:#E8ECF3;
+  --ink-2:#B7BFCE;
+  --blue:#9DB0FF;
+  --green:#62C79E;
+  --red:#F0907A;
+  --rule:#2A3563;
+  --rule-2:#6F7B9C;
+  --btn-bg:#2E54DD;
+  --btn-fg:#FFFFFF;
+  --btn-hover-bg:#E8ECF3;
+  --btn-hover-fg:#0B1330;
+  --placeholder:#8E98AE;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+  --paper:#0B1330;
+  --paper-2:#141E47;
+  --ink:#E8ECF3;
+  --ink-2:#B7BFCE;
+  --blue:#9DB0FF;
+  --green:#62C79E;
+  --red:#F0907A;
+  --rule:#2A3563;
+  --rule-2:#6F7B9C;
+  --btn-bg:#2E54DD;
+  --btn-fg:#FFFFFF;
+  --btn-hover-bg:#E8ECF3;
+  --btn-hover-fg:#0B1330;
+  --placeholder:#8E98AE;
+  color-scheme:dark;
+  }
+}
+
+/* --- Theme toggle ------------------------------------------------------- */
+
+.head-actions{display:flex;align-items:center;gap:.75rem}
+
+.theme-toggle{
+  display:none;
+  align-items:center;justify-content:center;
+  width:2.5rem;height:2.5rem;flex:none;padding:0;
+  background:transparent;color:var(--ink-2);
+  border:1px solid var(--rule);border-radius:0;cursor:pointer;
+}
+.js .theme-toggle{display:inline-flex}
+
+/* Wordmark, toggle, button and menu share one row. Below 36rem the button
+   moves into the menu (as its last item) so the row never overflows. */
+@media (max-width:30rem){
+  .masthead > .shell{gap:.75rem}
+  .head-actions{gap:.5rem}
+  .masthead .btn{padding:.6rem .7rem;letter-spacing:.04em}
+}
+/* Below 384px the header button goes; the same link sits in the hero. */
+@media (max-width:36rem){ .head-actions .btn{display:none} }
+@media (max-width:22.5rem){ .wordmark{font-size:.9375rem} } /* fits the row at 320px (WCAG 1.4.10) */
+
+/* --- Phone menu ------------------------------------------------------------
+   Below 62rem the header links fold into a Menu button. It is a <details>
+   element, so it works without JavaScript and screen readers announce it
+   as expanded or collapsed. menu.js closes it after a link is followed, on
+   Escape, or on a tap outside it.
+   ------------------------------------------------------------------------ */
+.menu{flex:none}
+.menu > summary{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:2.5rem;height:2.5rem;
+  list-style:none;cursor:pointer;
+  color:var(--ink-2);border:1px solid var(--rule);
+}
+.menu > summary::-webkit-details-marker{display:none}
+.menu > summary:hover,.menu[open] > summary{color:var(--blue);border-color:var(--blue)}
+.menu svg{width:1.15rem;height:1.15rem}
+.menu .i-close,.menu[open] .i-open{display:none}
+.menu[open] .i-close{display:block}
+.masthead .menu nav{
+  display:block;
+  position:absolute;left:0;right:0;top:100%;
+  background:var(--paper);
+  border-block:1px solid var(--rule);
+  box-shadow:0 18px 30px -18px rgb(0 0 0 / .3);
+}
+.masthead .menu ul{
+  display:grid;gap:0;
+  max-width:var(--shell);margin-inline:auto;
+  padding:.25rem var(--gutter) .75rem;
+}
+.masthead .menu li + li{border-top:1px solid var(--rule)}
+.masthead .menu a{display:block;padding:.95rem 0;font-size:.8125rem;color:var(--ink)}
+@media (min-width:62rem){ .menu{display:none} }
+.theme-toggle:hover{color:var(--blue);border-color:var(--blue)}
+.theme-toggle svg{width:1.15rem;height:1.15rem}
+.theme-toggle .sun{display:none}
+.theme-toggle[aria-pressed="true"] .sun{display:block}
+.theme-toggle[aria-pressed="true"] .moon{display:none}
+
+.visually-hidden{
+  position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="shell">
+    <a class="wordmark" href="/">Cornerstone<span>&nbsp;Designers</span></a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </nav>
+    <div class="head-actions">
+      <button class="theme-toggle" type="button" aria-pressed="false" title="Dark mode">
+        <span class="visually-hidden">Dark mode</span>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a6.6 6.6 0 0 0 9.7 9.7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+      <a class="btn btn-ghost" href="#contact">Start a project</a>
+      <details class="menu">
+        <summary title="Menu"><span class="visually-hidden">Menu</span><svg class="i-open" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><svg class="i-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></summary>
+        <nav aria-label="Menu">
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="#contact">Start a project</a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 1 — Hero ---------------------------------------------------------- -->
+  <section class="hero" aria-labelledby="hero-h">
+    <!-- Footage: "Top view of beach waves crashing on seashore" by Ruvim M, Pexels
+         (pexels.com/video/4183071), free for commercial use under the Pexels license.
+         Trimmed to a 12.5 s seamless loop and compressed. -->
+    <div class="hero-media" aria-hidden="true">
+      <video muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback poster="media/waves-poster-v1.jpg">
+        <source src="media/waves-v1.mp4" type="video/mp4">
+        <source src="media/waves-v1.webm" type="video/webm">
+      </video>
+    </div>
+    <div class="shell">
+      <button class="video-toggle" type="button" hidden>
+        <svg class="i-pause" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 1h3v10H2zM7 1h3v10H7z" fill="currentColor"/></svg>
+        <svg class="i-play" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 1l8.5 5-8.5 5z" fill="currentColor"/></svg>
+        <span>Pause video</span>
+      </button>
+
+      <p class="hero-eyebrow">Small business &middot; Online stores &middot; Professional services &middot; Healthcare &nbsp;/&nbsp; Columbia &amp; Newberry, SC &middot; and remote</p>
+
+      <h1 id="hero-h">Websites with the price printed on the page.</h1>
+
+      <p class="lede">Almost every studio makes you book a call to find out what it costs. Here it is, in writing, before you talk to anyone.</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#pricing">See the prices</a>
+        <a class="btn btn-ghost" href="#contact">Start a project</a>
+      </div>
+
+      <p class="availability">Taking projects starting October</p>
+
+      <dl class="specs">
+        <div>
+          <dt>Starting price</dt>
+          <dd>$4,500</dd>
+        </div>
+        <div>
+          <dt>Typical launch</dt>
+          <dd>3&ndash;4 weeks</dd>
+        </div>
+        <div>
+          <dt>Who owns it</dt>
+          <dd>You do</dd>
+        </div>
+        <div>
+          <dt>Required monthly</dt>
+          <dd>$0</dd>
+        </div>
+      </dl>
+
+    </div>
+  </section>
+
+  <!-- 2 — Why prices ---------------------------------------------------- -->
+  <section id="why" aria-labelledby="why-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">01 &nbsp;/&nbsp; Transparency</p>
+          <h2 id="why-h">Why this page has prices on it</h2>
+        </div>
+        <div class="prose">
+          <p>Ask a web studio what a site costs and you will almost always be told it depends, followed by a calendar link. Sometimes that is genuine. Often it is a way of finding out what you can afford before quoting.</p>
+          <p>Every buyer&rsquo;s guide written for small business owners says the same thing: <strong>a vendor who won&rsquo;t give you a number before a call is pricing you, not the work.</strong></p>
+          <p>So the numbers are here. If they are wrong for your business, you have lost thirty seconds instead of an hour. If they are right, the first call can be about the actual website.</p>
+        </div>
+      </div>
+
+      <ul class="promises">
+        <li>
+          <h3>A fixed price</h3>
+          <p>Agreed before work starts. It does not move because the project took longer than we estimated &mdash; that is our problem, not yours.</p>
+        </li>
+        <li>
+          <h3>Full ownership</h3>
+          <p>The domain, the hosting account, the files, the content. All in your name. Nothing is held hostage.</p>
+        </li>
+        <li>
+          <h3>A launch date, not a range</h3>
+          <p>You get a date at the start. If we need something from you to hit it, you will know exactly what and exactly when.</p>
+        </li>
+        <li>
+          <h3>No lock-in</h3>
+          <p>Monthly support is optional and cancellable. Leave whenever you like and we will help you move, free.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3 — What we build ---------------------------------------------- -->
+  <section id="services" aria-labelledby="services-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">02 &nbsp;/&nbsp; What we build</p>
+          <h2 id="services-h">Any business. Any kind of website.</h2>
+        </div>
+        <div class="prose">
+          <p>A two-person trade business, a restaurant, an online shop, a consultant, a multi-location practice &mdash; the process is the same, the prices are the same, and so is the promise: <strong>you get the site you asked for, on the date we agreed, for the price on this page.</strong></p>
+        </div>
+      </div>
+
+      <ul class="services">
+        <li>
+          <h3><a href="/services/small-business-website-design/">Business websites</a></h3>
+          <p>A fast, credible site that explains what you do, shows why people choose you, and makes it easy to call, book or ask for a quote.</p>
+        </li>
+        <li>
+          <h3><a href="/services/online-store-websites/">Online stores</a></h3>
+          <p>Products, checkout, shipping and tax set up properly on a platform in your name &mdash; so the store is yours, not ours.</p>
+        </li>
+        <li>
+          <h3>Booking and appointments</h3>
+          <p>Connected to the scheduling tool you already use, or help choosing one, so customers can book without picking up the phone.</p>
+        </li>
+        <li>
+          <h3><a href="/services/website-redesign/">Redesigns and rebuilds</a></h3>
+          <p>Keep what works on your current site, fix what doesn&rsquo;t, and move it somewhere you actually control.</p>
+        </li>
+        <li>
+          <h3>Landing pages and launches</h3>
+          <p>One focused page for a new product, an event, a campaign or a new location, built as one of the pages in any of the three tiers.</p>
+        </li>
+        <li>
+          <h3>Portfolios and personal brands</h3>
+          <p>For creatives, consultants, coaches, speakers and authors &mdash; people whose work is the product.</p>
+        </li>
+        <li>
+          <h3>Nonprofits and community groups</h3>
+          <p>Donations, events and volunteer sign-ups, built to be usable by everyone you serve.</p>
+        </li>
+        <li>
+          <h3><a href="/services/healthcare-practice-websites/">Medical, dental and healthcare</a></h3>
+          <p>Where we started. We know where privacy exposure hides on a practice website and build around it &mdash; <a href="#scope">see the scope</a>.</p>
+        </li>
+      </ul>
+
+      <p class="industries"><span>Built for</span>Trades &amp; home services &middot; Restaurants &amp; caf&eacute;s &middot; Retail &middot; Professional services &middot; Real estate &middot; Salons, spas &amp; fitness &middot; Churches &amp; nonprofits &middot; Startups &middot; Medical &amp; dental practices</p>
+    </div>
+  </section>
+
+  <!-- 4 — Pricing ------------------------------------------------------- -->
+  <section id="pricing" aria-labelledby="pricing-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">03 &nbsp;/&nbsp; Pricing</p>
+          <h2 id="pricing-h">Three ways to buy a website</h2>
+        </div>
+        <div class="prose">
+          <p>Half to book the slot on the calendar, half on launch. No hourly billing, no change-order surprises. If the budget is tight we reduce the scope, not the rate &mdash; same quality, fewer pages.</p>
+        </div>
+      </div>
+
+      <div class="tiers">
+        <article class="tier">
+          <p class="tier-tag">Tier 01</p>
+          <h3>Starter Site</h3>
+          <p class="tier-price">$4,500</p>
+          <p class="tier-time">1&ndash;2 weeks</p>
+          <p>A small business, solo professional or new venture that needs a credible, fast, accessible site that brings in customers.</p>
+          <ul>
+            <li>4&ndash;5 pages</li>
+            <li>Contact, quote or booking request form</li>
+            <li>Services, about and contact pages</li>
+            <li>Google Business Profile connected</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Start this tier</a>
+        </article>
+
+        <article class="tier tier-feature">
+          <p class="tier-tag">Tier 02 &nbsp;&middot;&nbsp; Most businesses</p>
+          <h3>Business Site</h3>
+          <p class="tier-price">$8,500</p>
+          <p class="tier-time">3&ndash;4 weeks</p>
+          <p>An established business with several services, team members or products that each need their own page to be found.</p>
+          <ul>
+            <li>8&ndash;12 pages</li>
+            <li>A page per service or product line</li>
+            <li>Team or staff pages</li>
+            <li>Online booking or a small online store</li>
+            <li>Structured data across the site</li>
+            <li>Training session for your team</li>
+          </ul>
+          <a class="btn btn-primary" href="#contact">Start this tier</a>
+        </article>
+
+        <article class="tier">
+          <p class="tier-tag">Tier 03</p>
+          <h3>Custom Build</h3>
+          <p class="tier-price">$15,000+</p>
+          <p class="tier-time">6&ndash;8 weeks</p>
+          <p>Multiple locations, a full online store, integrations with the systems you already run, and a formal accessibility audit.</p>
+          <ul>
+            <li>Multi-location architecture</li>
+            <li>Full e-commerce or custom features</li>
+            <li>Scheduling, payment, CRM and email integrations</li>
+            <li>Full accessibility audit and report</li>
+          </ul>
+          <a class="btn btn-ghost" href="#contact">Start this tier</a>
+        </article>
+      </div>
+
+      <div class="support">
+        <p class="support-price">$195&thinsp;/&thinsp;mo</p>
+        <p><strong>Optional support.</strong> Hosting, updates, security, accessibility spot-checks and small edits. Cancellable any month, and if you leave we migrate you out free. Nothing on this page requires it.</p>
+      </div>
+
+      <div class="included">
+        <h3>In every build, at every tier</h3>
+        <ul>
+          <li>Mobile-first design</li>
+          <li>WCAG 2.1 AA conformance in the code</li>
+          <li>Contact or request form</li>
+          <li>Local SEO and structured data</li>
+          <li>Google Business Profile connection</li>
+          <li>Training for whoever runs the site</li>
+          <li>Analytics set up on purpose</li>
+          <li>Written plain-language handover</li>
+          <li>Every account in your name</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 — Scope --------------------------------------------------------- -->
+  <section id="scope" aria-labelledby="scope-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">04 &nbsp;/&nbsp; Scope</p>
+          <h2 id="scope-h">What we do, and what we don&rsquo;t</h2>
+        </div>
+        <div class="prose">
+          <p>Being specific about the boundary is not modesty. Overclaiming &mdash; on accessibility, on privacy, on healthcare compliance &mdash; creates real liability for us and for you, so here is the line, drawn plainly.</p>
+        </div>
+      </div>
+
+      <div class="scope">
+        <div class="scope-col">
+          <h3>What we do</h3>
+          <ul>
+            <li>
+              <span class="mark mark-do" aria-hidden="true">&#10003;</span>
+              <span><strong>WCAG 2.1 AA conformance written into the code</strong>Semantic markup, labelled form fields, keyboard navigation, real color contrast. Not a widget bolted on afterwards.</span>
+            </li>
+            <li>
+              <span class="mark mark-do" aria-hidden="true">&#10003;</span>
+              <span><strong>Stores, booking and payments you own</strong>Set up on platforms in your name, so the accounts, the customer list and the payouts are yours.</span>
+            </li>
+            <li>
+              <span class="mark mark-do" aria-hidden="true">&#10003;</span>
+              <span><strong>Forms that ask only what you need</strong>Enough to reply, quote or call someone back &mdash; nothing you would not want sitting in an inbox.</span>
+            </li>
+            <li>
+              <span class="mark mark-do" aria-hidden="true">&#10003;</span>
+              <span><strong>Analytics set up on purpose</strong>The numbers you actually need, configured deliberately rather than pasted in by default. For healthcare practices that means no GA4 on appointment pages: Google has confirmed it will not sign a Business Associate Agreement for it.</span>
+            </li>
+            <li>
+              <span class="mark mark-do" aria-hidden="true">&#10003;</span>
+              <span><strong>Local search setup</strong>Service and location pages, structured data, Google Business Profile connected properly.</span>
+            </li>
+            <li>
+              <span class="mark mark-do" aria-hidden="true">&#10003;</span>
+              <span><strong>Plain-language handover</strong>Written so whoever runs the business can look after the site without calling us.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="scope-col">
+          <h3>What we are not</h3>
+          <ul>
+            <li>
+              <span class="mark mark-dont" aria-hidden="true">&#10007;</span>
+              <span><strong>Not HIPAA certified &mdash; and neither is anyone else</strong>No government body issues HIPAA certification. A vendor claiming it is describing a private course they paid for, not a regulatory status.</span>
+            </li>
+            <li>
+              <span class="mark mark-dont" aria-hidden="true">&#10007;</span>
+              <span><strong>We do not sign Business Associate Agreements</strong>And we do not build systems that store or transmit protected health information. Patient portals and records access need a specialist vendor.</span>
+            </li>
+            <li>
+              <span class="mark mark-dont" aria-hidden="true">&#10007;</span>
+              <span><strong>We are not attorneys</strong>We build to WCAG 2.1 AA because it is the benchmark courts and regulators reference. We will never promise you a site is litigation-proof.</span>
+            </li>
+            <li>
+              <span class="mark mark-dont" aria-hidden="true">&#10007;</span>
+              <span><strong>No claims we can&rsquo;t stand behind</strong>Anything describing medical, legal or financial services is written or approved by you. We will not put professional claims in your mouth.</span>
+            </li>
+            <li>
+              <span class="mark mark-dont" aria-hidden="true">&#10007;</span>
+              <span><strong>No accessibility overlays, ever</strong>Overlay widgets do not deliver conformance and have themselves been named in accessibility lawsuits. We will not sell you one.</span>
+            </li>
+            <li>
+              <span class="mark mark-dont" aria-hidden="true">&#10007;</span>
+              <span><strong>No platforms you can&rsquo;t leave</strong>Nothing proprietary that only we can edit. If you move on, everything moves with you.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="scope-note prose">
+        <p><strong>For any business open to the public.</strong> Businesses open to the public are places of public accommodation under ADA Title III. There is no codified technical standard for their websites, and accessibility lawsuits against small businesses are filed every year &mdash; which is why conformance belongs in the code from day one.</p>
+        <p><strong>For healthcare practices, on the federal deadline &mdash; since it gets quoted wrongly.</strong> The HHS rule requiring WCAG 2.1 Level AA applies to healthcare providers receiving federal funds. An interim final rule in May 2026 extended the dates by one year: recipients with 15 or more employees now have until <strong>11 May 2027</strong>, those with fewer than 15 until <strong>10 May 2028</strong>. The standard and the scope did not change &mdash; only the dates. Title II covers state and local government entities &mdash; public hospitals, county clinics, university health systems. If someone has quoted you a Title II deadline for a private practice, they have quoted you the wrong rule.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 — Selected work ------------------------------------------------- -->
+  <!-- One real project so far. When the next is ready, add another
+       <article class="case"> inside .cases and drop the cases-one class:
+       two or three cards sit side by side on wide screens. -->
+  <section id="work" aria-labelledby="work-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">05 &nbsp;/&nbsp; Selected work</p>
+          <h2 id="work-h">Recent work, explained</h2>
+        </div>
+        <div class="prose">
+          <p>One site we can talk about properly beats a wall of thumbnails you can&rsquo;t learn anything from: who it was for, what we built, and why it looks the way it does.</p>
+        </div>
+      </div>
+
+      <div class="cases cases-one">
+        <article class="case case-feature" aria-labelledby="case-tt-h">
+          <figure class="case-shot">
+            <img src="media/work-taniels-trek.jpg" width="792" height="499" loading="lazy" decoding="async" alt="The Taniel&rsquo;s Trek homepage on a desktop screen: the site name in a large serif over a photo of a hiker on a mountain trail at sunrise, with Read Taniel&rsquo;s Story and Get Involved buttons.">
+            <figcaption><span>Case 01</span><span>tanielstrek.com</span></figcaption>
+          </figure>
+          <div class="case-body">
+            <p class="case-meta">Nonprofit &nbsp;&middot;&nbsp; St. Cloud, Florida</p>
+            <h3 id="case-tt-h">Taniel&rsquo;s Trek</h3>
+            <dl>
+              <div>
+                <dt>Who it&rsquo;s for</dt>
+                <dd>A community nonprofit built around Taniel&rsquo;s story, working on addiction and overdose awareness, education, recovery and healing.</dd>
+              </div>
+              <div>
+                <dt>What we built</dt>
+                <dd>Taniel&rsquo;s story, the four pillars of the mission, six plain-language resource guides from overdose and naloxone to grief, a drug alerts page with links to the official notices, events, and a story-sharing form where the writer chooses where it may appear and nothing is published automatically.</dd>
+              </div>
+              <div>
+                <dt>How it looks</dt>
+                <dd>Warm cream, deep violet and soft gold with a classic serif, so a heavy subject reads calm and welcoming, on a phone as much as on a desktop.</dd>
+              </div>
+            </dl>
+            <p class="case-link"><a href="https://tanielstrek.com/" target="_blank" rel="noopener">Visit the live site<span class="visually-hidden"> (opens in a new tab)</span></a> <span aria-hidden="true">&#8599;</span></p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 — Who we are ---------------------------------------------------- -->
+  <section id="team" aria-labelledby="team-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">06 &nbsp;/&nbsp; Who we are</p>
+          <h2 id="team-h">You will know who is building your site</h2>
+        </div>
+        <div class="prose">
+          <p>Cornerstone Designers is run from Newberry, South Carolina. You speak to the person doing the work, from the first email to launch day &mdash; nobody passing messages along.</p>
+        </div>
+      </div>
+
+      <div class="partners">
+        <article class="partner">
+          <h3>Taylor Odom</h3>
+          <p class="partner-loc">Newberry, South Carolina &nbsp;&middot;&nbsp; Midlands &amp; Upstate</p>
+          <p>Founder, owner &amp; web developer</p>
+          <p class="partner-bio">Before websites, I ran my own lawn care and landscaping business for four years, installed industrial fire protection systems, managed solar installation projects, and worked as an EMT with Richland County EMS, then moved into environmental health and safety. EMS and safety work run on compliance, careful records and clear decisions under pressure, and I bring the same habits to accessibility, privacy and code that holds up. Running my own business taught me what people want from anyone they hire: a straight price, a date that holds, and a person who answers the phone. It&rsquo;s how I run Cornerstone Designers, and it&rsquo;s why the prices are on this page.</p>
+          <p class="partner-link"><a href="https://www.linkedin.com/in/taylor-odom-531a87297/" rel="me">Taylor on LinkedIn</a></p>
+        </article>
+
+        <!-- Second partner card goes back here when he's added. -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 — Process ------------------------------------------------------- -->
+  <section id="process" aria-labelledby="process-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">07 &nbsp;/&nbsp; Process</p>
+          <h2 id="process-h">You always know whose turn it is</h2>
+        </div>
+        <div class="prose">
+          <p>Most projects that run late run late because nobody said clearly what was needed and by when. Each step below names who is holding the ball.</p>
+        </div>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>Questions and written estimate</h3>
+            <p class="when">Before we start &nbsp;&middot;&nbsp; you, then us</p>
+          </div>
+          <p>We send one email of questions about your business, your customers, the pages and features you need and the look you&rsquo;re after. Answer by replying, or on the form. Within two working days of your answers you get a written scope and a fixed price &mdash; not a range.</p>
+        </li>
+        <li>
+          <div>
+            <h3>Content and deposit</h3>
+            <p class="when">Week 1 &nbsp;&middot;&nbsp; your turn</p>
+          </div>
+          <p>Half the fee books your slot. We send one checklist of anything still missing: logo files, photographs, product or service details, logins for anything we&rsquo;re connecting. One list, not a drip of emails.</p>
+        </li>
+        <li>
+          <div>
+            <h3>Build and review</h3>
+            <p class="when">Weeks 2&ndash;3 &nbsp;&middot;&nbsp; our turn</p>
+          </div>
+          <p>You see it on a private link as it comes together, not as a surprise at the end. Two rounds of revisions are included and almost nobody uses the second.</p>
+        </li>
+        <li>
+          <div>
+            <h3>Launch and handover</h3>
+            <p class="when">Week 4 &nbsp;&middot;&nbsp; together</p>
+          </div>
+          <p>We go live on the agreed date, walk your team through it, and hand over every account in your name. Balance is due here. Then you are free to leave or to keep us on.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 9 — Coverage ------------------------------------------------------ -->
+  <section id="coverage" aria-labelledby="coverage-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">08 &nbsp;/&nbsp; Coverage</p>
+          <h2 id="coverage-h">Where we work</h2>
+        </div>
+        <div class="prose">
+          <p>One region where we will come to your business and see how customers actually find you &mdash; and everywhere else, run the same way, without the visit.</p>
+        </div>
+      </div>
+
+      <div class="regions">
+        <article class="region">
+          <h3>SC Midlands &amp; Upstate</h3>
+          <p>Based in Newberry. In-person kickoff and handover included.</p>
+          <p class="region-places">Newberry &middot; Columbia &middot; Lexington &middot; Irmo &middot; Greenwood &middot; Greenville &middot; Spartanburg</p>
+        </article>
+
+        <article class="region">
+          <h3>Remote &mdash; anywhere</h3>
+          <p>The same process, the same price, the same launch date. Video calls instead of a site visit. Most of our review happens on a shared link anyway.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 — FAQ ---------------------------------------------------------- -->
+  <section id="faq" aria-labelledby="faq-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">09 &nbsp;/&nbsp; Questions</p>
+          <h2 id="faq-h">What people ask us</h2>
+        </div>
+        <div class="prose">
+          <p>If yours is not here, ask it on the form below. We answer in writing, not on a call you have to book.</p>
+        </div>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>What kinds of businesses do you build for?</summary>
+          <div class="faq-answer">
+            <p>Almost any. Trades and home services, restaurants, shops, consultants, real estate, salons and gyms, churches and nonprofits, startups, and medical and dental practices &mdash; which is where we started.</p>
+            <p>What stays the same is the process: one set of questions up front, a written fixed price, a launch date, and a site you own outright. If a project is outside what we do well, we will tell you so and point you to someone who does it better.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do you make sure I get the site I actually want?</summary>
+          <div class="faq-answer">
+            <p>By asking properly before we build anything. After you get in touch we send one email of questions &mdash; your customers, the pages you need, the features, the look, the sites you like and the ones you don&rsquo;t. You answer by replying, in your own words.</p>
+            <p>Everything you tell us goes into the written scope, and we check the finished site against it line by line before you see it. Two rounds of revisions are included for anything that still isn&rsquo;t right.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can you build an online store?</summary>
+          <div class="faq-answer">
+            <p>Yes. We set it up on a platform in your name &mdash; so the products, the customer list and the payouts belong to you &mdash; with checkout, shipping and tax configured properly.</p>
+            <p>A small catalog usually fits the Business Site tier. A large catalog, subscriptions or a custom checkout is a Custom Build. Either way you get the number in writing before anything starts. Platform and card-processing fees are charged by those providers, not by us.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why publish prices when most studios won&rsquo;t?</summary>
+          <div class="faq-answer">
+            <p>Because hiding them mainly benefits us, and we would rather have the trust. A published price means you can decide in thirty seconds whether we are worth a conversation, and it means we are not quietly quoting a bigger business more for the same work.</p>
+            <p>It also means the people who call are people the price already suits. That is a better use of everyone&rsquo;s afternoon.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why not a $500 website?</summary>
+          <div class="faq-answer">
+            <p>Sometimes that is the right call, and a template or a DIY builder can be a fine start. At that price something has to give, though, and it is usually what you only notice later: who owns the domain and the hosting, whether the site works with a keyboard and a screen reader, whether anyone set up local search, and whether there is a written scope and a launch date.</p>
+            <p>Those are what our prices pay for, and they are in every tier. If $500 is the real budget, tell us. We will say plainly whether we are a fit and, if we are not, point you to a builder that is.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can the price change once you&rsquo;ve started?</summary>
+          <div class="faq-answer">
+            <p>Not for the work in the written scope. If it takes us longer than we estimated, that is our misjudgment and our cost.</p>
+            <p>It changes only if you ask for something that was not in the scope &mdash; an extra service page, a second location, a booking integration we did not know about. When that happens we quote it separately in writing first, and you decide before any work starts. You will never open an invoice you were not expecting.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Who owns the site when it&rsquo;s finished?</summary>
+          <div class="faq-answer">
+            <p>You do, completely. The domain is registered in your business&rsquo;s name, the hosting account is yours, and you get the files. If you decide next year to move to another studio, you take everything with you and we help with the migration at no charge.</p>
+            <p>We do not build on a proprietary platform you can only leave by starting over. That is a business model, not a service.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do I have to buy the monthly support?</summary>
+          <div class="faq-answer">
+            <p>No. It is $195 a month, it is genuinely optional, and plenty of clients skip it. It covers hosting, updates, security, accessibility spot-checks and small edits &mdash; useful if nobody on your team wants to touch the site, unnecessary if someone does.</p>
+            <p>You can start it later, stop it any month, and it has no effect on your ownership either way.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What about those accessibility widgets? They&rsquo;re cheaper.</summary>
+          <div class="faq-answer">
+            <p>They are cheaper because they do not work. Overlay products have repeatedly failed to deliver conformance, and several have themselves been named in accessibility lawsuits. Courts have not accepted overlay compliance as a defense.</p>
+            <p>In 2025, 8,667 ADA Title III lawsuits were filed in federal court (buildings and websites together), and one tracker counted more than 5,000 website and app accessibility lawsuits across federal and state courts. The FTC also fined the best-known overlay maker $1 million for claiming its widget made sites compliant. We build conformance into the markup instead, which is the only version that holds up. <a href="/blog/accessibility-overlays-ada-compliance/">The full story, with sources</a>.</p>
+          </div>
+        </details>
+
+        <h3 class="faq-group">For healthcare practices</h3>
+
+        <details>
+          <summary>Are you HIPAA certified?</summary>
+          <div class="faq-answer">
+            <p>No, and neither is anyone who says they are. There is no government body that issues HIPAA certification &mdash; no federal agency accredits vendors. When a web company advertises it, they are describing a private training course they paid for.</p>
+            <p>What we actually do is build sites that stay out of HIPAA&rsquo;s way: no protected health information collected, stored or transmitted, and analytics configured so the practice is not handing patient data to a company that will not sign a Business Associate Agreement. If you need a patient portal or records access, you need a specialist vendor, and we will say so on the first call.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Will you sign a Business Associate Agreement?</summary>
+          <div class="faq-answer">
+            <p>No. A BAA is for vendors who handle protected health information, and we deliberately build systems that do not. Signing one would imply a service we do not provide.</p>
+            <p>If your practice needs a website component that genuinely touches PHI &mdash; a portal, an intake that collects history, an integration with your EHR &mdash; that belongs with a vendor who specializes in it and carries the insurance for it. We will happily build around whatever they provide.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is Google Analytics really a problem?</summary>
+          <div class="faq-answer">
+            <p>On an appointment or intake page, yes. Google has confirmed it does not offer a Business Associate Agreement for GA4. If a page where a patient requests an appointment is sending data to Google, the practice &mdash; not Google, and not us &mdash; carries that exposure.</p>
+            <p>Almost every small practice site we look at is doing this right now, usually because whoever built it dropped in the default snippet without thinking about it. We configure an analytics setup that gives you the numbers you need without that problem, and we explain it in writing so you can show your compliance officer.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 — From the blog ------------------------------------------------ -->
+  <section id="blog" aria-labelledby="blog-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">10 &nbsp;/&nbsp; From the blog</p>
+          <h2 id="blog-h">Plain answers, written down</h2>
+        </div>
+        <div class="prose">
+          <p>What websites cost, what actually makes one accessible, and what to ask before you hire anyone &mdash; including us. <a href="/blog/">Read the blog</a>.</p>
+        </div>
+      </div>
+      <!-- blog:latest:start (filled in by tools/build-blog.mjs, don't edit by hand) -->
+      <ul class="latest">
+        <li>
+          <p class="meta">Hiring a designer &middot; <time datetime="2026-10-03">October 3, 2026</time></p>
+          <h3><a href="/blog/web-designer-columbia-sc/">Choosing a web designer in Columbia, SC: what to look for</a></h3>
+          <p>How to choose a web designer in Columbia, SC: whether local matters, what a Midlands business site needs, how to vet a designer, and free help.</p>
+        </li>
+        <li>
+          <p class="meta">Redesigns &middot; <time datetime="2026-09-29">September 29, 2026</time></p>
+          <h3><a href="/blog/signs-website-needs-redesign/">7 signs your website needs a redesign</a></h3>
+          <p>Seven signs your website needs a redesign, how to check each one yourself in a few minutes, and when a smaller fix will do instead.</p>
+        </li>
+        <li>
+          <p class="meta">Local search &middot; <time datetime="2026-09-26">September 26, 2026</time></p>
+          <h3><a href="/blog/google-business-profile-service-area-business/">How to set up a Google Business Profile for a service-area business</a></h3>
+          <p>How to set up a Google Business Profile for a service-area business, from Google's own rules: address, service areas, name, category, verification.</p>
+        </li>
+      </ul>
+      <!-- blog:latest:end -->
+    </div>
+  </section>
+
+  <!-- 12 — Contact ------------------------------------------------------ -->
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div class="shell">
+      <div class="split">
+        <div>
+          <p class="anno">11 &nbsp;/&nbsp; Contact</p>
+          <h2 id="contact-h">Tell us about the project</h2>
+        </div>
+        <div class="prose">
+          <p>Send the form and you will get a reply from a person, usually the same day and always within one working day. If you would rather just talk, call.</p>
+        </div>
+      </div>
+
+      <ul class="channels">
+        <li>
+          <p class="channel-label">Phone</p>
+          <p class="channel-value"><a href="tel:+18037685337">(803) 768-5337</a></p>
+        </li>
+        <li>
+          <p class="channel-label">Email</p>
+          <p class="channel-value"><a href="mailto:hello@cornerstonedesigners.com">hello@cornerstonedesigners.com</a></p>
+        </li>
+      </ul>
+
+      <div class="form-wrap">
+        <h3>Start a project</h3>
+        <p>A short form. We reply with the questions that shape your site &mdash; answer them by email &mdash; and then a written fixed price.</p>
+
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="company-website" action="/contact-received">
+          <input type="hidden" name="form-name" value="contact">
+
+          <p class="hp">
+            <label>Leave this field empty <input name="company-website" tabindex="-1" autocomplete="off"></label>
+          </p>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="c-name">Your name</label>
+              <input id="c-name" name="name" type="text" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="c-business">Business or organization name</label>
+              <input id="c-business" name="business" type="text" autocomplete="organization" required>
+            </div>
+
+            <div class="field">
+              <label for="c-email">Email</label>
+              <input id="c-email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="c-phone">Phone <span class="opt">(optional)</span></label>
+              <input id="c-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+
+            <div class="field">
+              <label for="c-type">What kind of business?</label>
+              <select id="c-type" name="business_type">
+                <option value="">Choose one</option>
+                <option>Trades or home services</option>
+                <option>Restaurant, caf&eacute; or food</option>
+                <option>Retail or online store</option>
+                <option>Professional services</option>
+                <option>Real estate</option>
+                <option>Salon, spa or fitness</option>
+                <option>Medical, dental or healthcare practice</option>
+                <option>Nonprofit, church or community group</option>
+                <option>Creative, portfolio or personal brand</option>
+                <option>Startup or tech</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="c-site">What kind of website?</label>
+              <select id="c-site" name="site_type">
+                <option value="">Not sure yet</option>
+                <option>A new website &mdash; we don&rsquo;t have one</option>
+                <option>A redesign of our current site</option>
+                <option>An online store</option>
+                <option>A booking or appointments site</option>
+                <option>A landing page for a launch or campaign</option>
+              </select>
+            </div>
+
+            <div class="field field-full">
+              <label for="c-tier">Which tier looks closest?</label>
+              <select id="c-tier" name="tier">
+                <option value="">Not sure yet &mdash; help me work it out</option>
+                <option value="Starter Site — $4,500">Starter Site &mdash; $4,500</option>
+                <option value="Business Site — $8,500">Business Site &mdash; $8,500</option>
+                <option value="Custom Build — $15,000+">Custom Build &mdash; $15,000+</option>
+                <option value="Support only — $195/mo">Support only &mdash; $195/mo</option>
+              </select>
+            </div>
+
+            <div class="field field-full">
+              <label for="c-message">What do you need the website to do?</label>
+              <textarea id="c-message" name="message" required aria-describedby="c-message-help"></textarea>
+              <p class="field-help" id="c-message-help">A few sentences is plenty &mdash; our reply asks the detailed questions. Healthcare practice? Please don&rsquo;t include any patient information; this form is not a secure channel for it.</p>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Send</button>
+            <p class="privacy-note">We use what you send to reply to you and nothing else. No list, no reselling, no tracking pixels on this page.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="colophon">
+  <div class="shell">
+    <p>&copy; <span>2026</span> Cornerstone Designers &nbsp;&middot;&nbsp; Newberry, SC</p>
+    <p>Fixed prices, published &nbsp;&middot;&nbsp; <a href="#scope">See scope</a> &nbsp;&middot;&nbsp; <a href="/blog/">Blog</a> &nbsp;&middot;&nbsp; <a href="/pay">Make a payment</a> &nbsp;&middot;&nbsp; <a href="/privacy">Privacy</a></p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://cornerstonedesigners.com/#studio",
+  "name": "Cornerstone Designers",
+  "description": "Fixed-price web design for small businesses, online stores, professional services and healthcare practices, with prices published up front. WCAG 2.1 AA conformance built into the code.",
+  "url": "https://cornerstonedesigners.com/",
+  "logo": "https://cornerstonedesigners.com/apple-touch-icon.png",
+  "image": "https://cornerstonedesigners.com/og-image.png",
+  "email": "hello@cornerstonedesigners.com",
+  "telephone": "+1-803-768-5337",
+  "address": { "@type": "PostalAddress", "addressLocality": "Newberry", "addressRegion": "SC", "addressCountry": "US" },
+  "founder": { "@type": "Person", "name": "Taylor Odom", "jobTitle": "Founder, Owner & Web Developer", "sameAs": ["https://www.linkedin.com/in/taylor-odom-531a87297/"] },
+  "priceRange": "$4,500–$15,000+",
+  "knowsAbout": [
+    "Web design",
+    "Small business websites",
+    "E-commerce websites",
+    "Web accessibility",
+    "WCAG 2.1 AA conformance",
+    "Local SEO",
+    "Healthcare website design"
+  ],
+  "areaServed": [
+    { "@type": "State", "name": "South Carolina" },
+    { "@type": "City", "name": "Newberry", "address": { "@type": "PostalAddress", "addressRegion": "SC", "addressCountry": "US" } },
+    { "@type": "City", "name": "Columbia", "address": { "@type": "PostalAddress", "addressRegion": "SC", "addressCountry": "US" } },
+    { "@type": "City", "name": "Lexington", "address": { "@type": "PostalAddress", "addressRegion": "SC", "addressCountry": "US" } },
+    { "@type": "City", "name": "Irmo", "address": { "@type": "PostalAddress", "addressRegion": "SC", "addressCountry": "US" } },
+    { "@type": "City", "name": "Greenwood", "address": { "@type": "PostalAddress", "addressRegion": "SC", "addressCountry": "US" } },
+    { "@type": "City", "name": "Greenville", "address": { "@type": "PostalAddress", "addressRegion": "SC", "addressCountry": "US" } },
+    { "@type": "City", "name": "Spartanburg", "address": { "@type": "PostalAddress", "addressRegion": "SC", "addressCountry": "US" } }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Website packages",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Starter Site", "price": "4500", "priceCurrency": "USD", "description": "Small business or solo professional, 4–5 pages, 1–2 weeks." },
+      { "@type": "Offer", "name": "Business Site", "price": "8500", "priceCurrency": "USD", "description": "Established business, 8–12 pages, a page per service or product line, booking or a small store, 3–4 weeks." },
+      { "@type": "Offer", "name": "Custom Build", "price": "15000", "priceCurrency": "USD", "description": "Multi-location, full e-commerce or custom features, integrations, full accessibility audit, 6–8 weeks." }
+    ]
+  }
+}
+</script>
+
+</body>
+</html>

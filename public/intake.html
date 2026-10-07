@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<!-- The site has its own dark theme, so browser dark-mode extensions stand down. -->
+<meta name="darkreader-lock">
+<script src="theme.js"></script>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Project questionnaire — Cornerstone Designers</title>
+<meta name="description" content="The questions that shape your website, so we can build exactly what you are picturing and put a written fixed price in front of you.">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://cornerstonedesigners.com/intake">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ===========================================================================
+   Cornerstone Designers — project questionnaire
+   Same blueprint language as the homepage. Form controls sit on paper here
+   rather than on the dark contact panel, so they carry their own styling.
+   =========================================================================== */
+
+:root{
+  --paper:#EEF0F4;
+  --paper-2:#E2E6EC;
+  --ink:#0F1A3D;
+  --ink-2:#363F52;
+  --blue:#1E3BB0;
+  --green:#1F6F52;
+  --red:#98432F;
+  --rule:#C3C9D3;
+  /* Tokens the dark theme swaps. */
+  --btn-bg:#1E3BB0;
+  --btn-fg:#EEF0F4;
+  --btn-hover-bg:#0F1A3D;
+  --btn-hover-fg:#EEF0F4;
+  --placeholder:#5B6475;
+  color-scheme:light;
+
+  /* --rule only reaches 1.4:1 against paper, which is fine for a hairline
+     but fails WCAG 1.4.11 for a form-control boundary. --rule-2 is 3.3:1. */
+  --rule-2:#7C8596;
+
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --gutter:clamp(1.25rem,5vw,3.5rem);
+  --shell:52rem;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:clamp(1rem,0.96rem + 0.2vw,1.0625rem);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:var(--blue);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:2px}
+
+.skip{
+  position:absolute;left:-9999px;top:0;
+  background:var(--ink);color:var(--paper);
+  padding:.75rem 1.25rem;z-index:100;
+  font-family:var(--mono);font-size:.8125rem;
+}
+.skip:focus{left:0}
+
+.shell{width:100%;max-width:var(--shell);margin-inline:auto;padding-inline:var(--gutter)}
+
+h1,h2,h3,legend{
+  font-family:var(--display);font-weight:600;line-height:1.1;
+  letter-spacing:-.02em;margin:0;text-wrap:balance;
+}
+h1{font-size:clamp(2rem,1.5rem + 2.2vw,3rem);letter-spacing:-.03em;max-width:18ch}
+
+p{margin:0 0 1.1em;max-width:56ch}
+p:last-child{margin-bottom:0}
+
+.lede{font-size:clamp(1.05rem,1rem + .35vw,1.2rem);line-height:1.55;color:var(--ink-2);max-width:46ch}
+
+/* --- Header ------------------------------------------------------------- */
+
+.masthead{border-bottom:1px solid var(--rule)}
+.masthead > .shell{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1.5rem;padding-block:1rem;
+}
+.wordmark{
+  font-family:var(--display);font-weight:700;font-size:1.0625rem;
+  letter-spacing:-.02em;color:var(--ink);text-decoration:none;white-space:nowrap;
+}
+.wordmark span{color:var(--blue)}
+.back{
+  font-family:var(--mono);font-size:.75rem;letter-spacing:.09em;
+  text-transform:uppercase;text-decoration:none;color:var(--ink-2);
+}
+.back:hover{color:var(--blue);text-decoration:underline}
+
+/* --- Intro -------------------------------------------------------------- */
+
+.intro > .shell{padding-block:clamp(2.75rem,6vw,4.5rem) clamp(2rem,4vw,3rem)}
+
+.anno{
+  font-family:var(--mono);font-size:.75rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--blue);margin:0 0 1.5rem;max-width:none;
+}
+
+.intro h1{margin-bottom:1.5rem}
+
+.meta{
+  margin:2.5rem 0 0;padding:0;border:1px solid var(--rule);
+  background:var(--paper-2);display:grid;
+}
+@media (min-width:40rem){ .meta{grid-template-columns:1fr 1fr} }
+.meta > div{padding:1.15rem 1.35rem;border-top:1px solid var(--rule)}
+.meta > div:first-child{border-top:0}
+@media (min-width:40rem){
+  .meta > div{border-top:0;border-left:1px solid var(--rule)}
+  .meta > div:first-child{border-left:0}
+}
+.meta dt{
+  font-family:var(--mono);font-size:.6875rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-2);margin-bottom:.4rem;
+}
+.meta dd{margin:0;font-size:.9375rem;color:var(--ink)}
+
+/* --- The boundary notice ------------------------------------------------ */
+
+.notice{
+  border:1px solid var(--red);
+  border-left-width:3px;
+  padding:1.25rem 1.4rem;
+  margin-top:2.5rem;
+  background:var(--paper-2);
+}
+.notice h2{
+  font-size:.9375rem;font-family:var(--mono);font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--red);
+  margin-bottom:.7rem;
+}
+.notice p{font-size:.9375rem;color:var(--ink-2);max-width:62ch}
+
+/* --- Form --------------------------------------------------------------- */
+
+form{padding-bottom:clamp(3rem,7vw,6rem)}
+
+fieldset{
+  border:0;margin:0;padding:clamp(2rem,4.5vw,3rem) 0 0;
+  border-top:1px solid var(--rule);
+  margin-top:clamp(2rem,4.5vw,3rem);
+}
+fieldset:first-of-type{border-top:0;margin-top:0}
+
+legend{
+  padding:0;font-size:clamp(1.3rem,1.15rem + .7vw,1.65rem);
+  display:block;width:100%;
+}
+.legend-no{
+  display:block;font-family:var(--mono);font-size:.75rem;font-weight:400;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--blue);
+  margin-bottom:.7rem;letter-spacing:.13em;
+}
+.legend-note{
+  font-family:var(--body);font-size:.9375rem;font-weight:400;
+  letter-spacing:0;color:var(--ink-2);line-height:1.6;
+  margin:.9rem 0 0;max-width:56ch;
+}
+
+.grid{display:grid;gap:1.6rem;margin-top:2rem}
+@media (min-width:40rem){
+  .grid{grid-template-columns:1fr 1fr}
+  .full{grid-column:1/-1}
+}
+
+.field > label,
+.group > .group-label{
+  display:block;font-family:var(--mono);font-size:.6875rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);
+  margin-bottom:.55rem;
+}
+.opt{text-transform:none;letter-spacing:0}
+
+.field input[type=text],
+.field input[type=email],
+.field input[type=tel],
+.field input[type=url],
+.field input[type=number],
+.field input[type=month],
+.field select,
+.field textarea{
+  width:100%;font-family:var(--body);font-size:1rem;color:var(--ink);
+  background:var(--paper);border:1px solid var(--rule-2);border-radius:0;
+  padding:.75rem .85rem;appearance:none;
+}
+.field textarea{min-height:7.5rem;resize:vertical;line-height:1.6}
+.field select{
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink-2) 50%),
+                   linear-gradient(135deg,var(--ink-2) 50%,transparent 50%);
+  background-position:calc(100% - 1.15rem) 1.35rem,calc(100% - .8rem) 1.35rem;
+  background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:2.5rem;
+}
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible{
+  outline:2px solid var(--blue);outline-offset:2px;border-color:var(--blue);
+}
+
+.help{font-size:.8125rem;color:var(--ink-2);margin:.5rem 0 0;max-width:56ch}
+
+/* Browsers default placeholder text to a pale grey (2:1 here). */
+.field ::placeholder{color:var(--placeholder);opacity:1}
+
+/* Radio and checkbox groups */
+
+.group{margin-top:0}
+.opts{display:grid;gap:.7rem;margin:0;padding:0;list-style:none}
+@media (min-width:40rem){ .opts-2col{grid-template-columns:1fr 1fr;gap:.7rem 1.5rem} }
+
+.opt-row{
+  display:grid;grid-template-columns:1.15rem 1fr;gap:.75rem;
+  align-items:start;font-size:.9375rem;line-height:1.5;
+  color:var(--ink-2);cursor:pointer;
+  /* The whole row is the hit area. 1.5rem clears the 24px minimum in
+     WCAG 2.2 SC 2.5.8 outright, rather than leaning on the spacing exception. */
+  min-height:1.5rem;
+  align-content:center;
+}
+.opt-row input{
+  appearance:none;width:1.15rem;height:1.15rem;margin:.16rem 0 0;
+  border:1px solid var(--rule-2);background:var(--paper);
+  cursor:pointer;flex:none;
+}
+.opt-row input[type=radio]{border-radius:50%}
+.opt-row input:checked{
+  background:var(--blue);border-color:var(--blue);
+  box-shadow:inset 0 0 0 3px var(--paper);
+}
+.opt-row input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.opt-row:hover{color:var(--ink)}
+
+/* Key-question star, and the optional "only if it applies" panels */
+
+.key{color:var(--blue);font-family:var(--body)}
+
+details.extra{border:1px solid var(--rule-2);margin-top:1.25rem;background:var(--paper)}
+details.extra:first-of-type{margin-top:1.75rem}
+details.extra > summary{
+  cursor:pointer;list-style:none;position:relative;
+  padding:1.1rem 3rem 1.1rem 1.35rem;
+  font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:-.01em;
+}
+details.extra > summary::-webkit-details-marker{display:none}
+details.extra > summary::after{
+  content:"+";position:absolute;right:1.35rem;top:1.05rem;
+  font-family:var(--mono);font-weight:400;font-size:1.15rem;color:var(--blue);
+}
+details.extra[open] > summary::after{content:"\2013"}
+details.extra > summary:hover{color:var(--blue)}
+.summary-note{
+  display:block;margin-top:.2rem;
+  font-family:var(--body);font-weight:400;font-size:.875rem;letter-spacing:0;color:var(--ink-2);
+}
+.extra-body{padding:0 1.35rem 1.6rem}
+.extra-body .notice{margin-top:0}
+.extra-body .grid{margin-top:1.5rem}
+
+/* --- Submit ------------------------------------------------------------- */
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.8125rem;letter-spacing:.08em;
+  text-transform:uppercase;padding:.95rem 1.75rem;
+  border:1px solid var(--btn-bg);text-decoration:none;cursor:pointer;
+  background:var(--btn-bg);color:var(--btn-fg);
+  transition:background-color .15s ease,border-color .15s ease;
+}
+.btn:hover{background:var(--btn-hover-bg);border-color:var(--btn-hover-bg);color:var(--btn-hover-fg)}
+
+.submit{
+  margin-top:clamp(2.5rem,5vw,3.5rem);
+  padding-top:clamp(2rem,4vw,2.5rem);
+  border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;align-items:center;gap:1.5rem;
+}
+.submit p{font-size:.8125rem;color:var(--ink-2);max-width:42ch;margin:0}
+
+.hp{position:absolute;left:-9999px}
+
+.req{color:var(--red);font-family:var(--body)}
+
+/* --- Footer ------------------------------------------------------------- */
+
+.colophon{background:#132B86;color:#DCE1E9}
+.colophon > .shell{
+  padding-block:2rem;display:flex;flex-wrap:wrap;
+  gap:1rem 2rem;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:.75rem;
+}
+.colophon p{margin:0;max-width:none}
+.colophon a{color:#FFFFFF}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.001ms !important;animation-duration:.001ms !important}
+}
+
+@media print{ .masthead{display:none} }
+
+/* --- Dark theme ----------------------------------------------------------
+   Deep navy, silver text, royal-blue accents. Follows the visitor's system
+   setting unless they pick a theme with the header toggle (theme.js).
+   Every text pair is 6:1 or better; body copy is 9.9:1.
+   ------------------------------------------------------------------------ */
+
+:root[data-theme="dark"]{
+  --paper:#0B1330;
+  --paper-2:#141E47;
+  --ink:#E8ECF3;
+  --ink-2:#B7BFCE;
+  --blue:#9DB0FF;
+  --green:#62C79E;
+  --red:#F0907A;
+  --rule:#2A3563;
+  --rule-2:#6F7B9C;
+  --btn-bg:#2E54DD;
+  --btn-fg:#FFFFFF;
+  --btn-hover-bg:#E8ECF3;
+  --btn-hover-fg:#0B1330;
+  --placeholder:#8E98AE;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+  --paper:#0B1330;
+  --paper-2:#141E47;
+  --ink:#E8ECF3;
+  --ink-2:#B7BFCE;
+  --blue:#9DB0FF;
+  --green:#62C79E;
+  --red:#F0907A;
+  --rule:#2A3563;
+  --rule-2:#6F7B9C;
+  --btn-bg:#2E54DD;
+  --btn-fg:#FFFFFF;
+  --btn-hover-bg:#E8ECF3;
+  --btn-hover-fg:#0B1330;
+  --placeholder:#8E98AE;
+  color-scheme:dark;
+  }
+}
+
+/* --- Theme toggle ------------------------------------------------------- */
+
+.head-actions{display:flex;align-items:center;gap:.75rem}
+
+.theme-toggle{
+  display:none;
+  align-items:center;justify-content:center;
+  width:2.5rem;height:2.5rem;flex:none;padding:0;
+  background:transparent;color:var(--ink-2);
+  border:1px solid var(--rule);border-radius:0;cursor:pointer;
+}
+.js .theme-toggle{display:inline-flex}
+.theme-toggle:hover{color:var(--blue);border-color:var(--blue)}
+.theme-toggle svg{width:1.15rem;height:1.15rem}
+.theme-toggle .sun{display:none}
+.theme-toggle[aria-pressed="true"] .sun{display:block}
+.theme-toggle[aria-pressed="true"] .moon{display:none}
+
+.visually-hidden{
+  position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the questions</a>
+
+<header class="masthead">
+  <div class="shell">
+    <a class="wordmark" href="/">Cornerstone<span>&nbsp;Designers</span></a>
+    <div class="head-actions">
+      <a class="back" href="/">&larr; Back to the site</a>
+      <button class="theme-toggle" type="button" aria-pressed="false" title="Dark mode">
+        <span class="visually-hidden">Dark mode</span>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a6.6 6.6 0 0 0 9.7 9.7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="intro">
+    <div class="shell">
+      <p class="anno">Questionnaire &nbsp;/&nbsp; before we quote</p>
+      <h1>Tell us exactly what you&rsquo;re picturing.</h1>
+      <p class="lede">These are the same questions as our email, as a form. Answer what you can and skip what doesn&rsquo;t apply &mdash; anything you leave blank we will ask about later. Nothing here is a test.</p>
+
+      <dl class="meta">
+        <div>
+          <dt>How long this takes</dt>
+          <dd>10&ndash;15 minutes. Short on time? Answer the <span class="key" aria-hidden="true">&#9733;</span> questions.</dd>
+        </div>
+        <div>
+          <dt>What happens next</dt>
+          <dd>A written fixed price, usually within two working days</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="shell">
+    <form name="project-intake" method="POST" data-netlify="true" netlify-honeypot="referral-code" action="/thank-you">
+      <input type="hidden" name="form-name" value="project-intake">
+
+      <p class="hp">
+        <label>Leave this field empty <input name="referral-code" tabindex="-1" autocomplete="off"></label>
+      </p>
+
+      <!-- 01 ---------------------------------------------------------- -->
+      <fieldset>
+        <legend><span class="legend-no">Section 01</span> Who we&rsquo;ll be talking to</legend>
+
+        <div class="grid">
+          <div class="field">
+            <label for="name">Your name <span class="req" aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="role">Your role</label>
+            <input id="role" name="role" type="text" autocomplete="organization-title" placeholder="Owner, manager, marketing lead&hellip;">
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone <span class="opt">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+
+          <div class="field full">
+            <label for="decision-maker">Who makes the final call on the site?</label>
+            <input id="decision-maker" name="decision_maker" type="text" placeholder="Me, me and a partner, the owner, a board&hellip;">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 02 ---------------------------------------------------------- -->
+      <fieldset>
+        <legend><span class="legend-no">Section 02</span> Your business</legend>
+
+        <div class="grid">
+          <div class="field full">
+            <label for="business"><span class="key" aria-hidden="true">&#9733;</span> Business name, exactly as it should appear on the site <span class="req" aria-hidden="true">*</span></label>
+            <input id="business" name="business" type="text" autocomplete="organization" required>
+          </div>
+
+          <div class="field">
+            <label for="business-type">What kind of business</label>
+            <select id="business-type" name="business_type">
+              <option value="">Choose one</option>
+              <option>Trades or home services</option>
+              <option>Restaurant, caf&eacute; or food</option>
+              <option>Retail or online store</option>
+              <option>Professional services</option>
+              <option>Real estate</option>
+              <option>Salon, spa or fitness</option>
+              <option>Medical, dental or healthcare practice</option>
+              <option>Nonprofit, church or community group</option>
+              <option>Creative, portfolio or personal brand</option>
+              <option>Startup or tech</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="site-type">What kind of website</label>
+            <select id="site-type" name="site_type">
+              <option value="">Not sure yet</option>
+              <option>A new website &mdash; we don&rsquo;t have one</option>
+              <option>A redesign of our current site</option>
+              <option>An online store</option>
+              <option>A booking or appointments site</option>
+              <option>A landing page for a launch or campaign</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="what-you-do"><span class="key" aria-hidden="true">&#9733;</span> In a sentence or two, what do you do?</label>
+            <textarea id="what-you-do" name="what_you_do"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="area"><span class="key" aria-hidden="true">&#9733;</span> Where are you based, and what area do you serve?</label>
+            <input id="area" name="location_and_service_area" type="text" placeholder="Columbia, SC &mdash; we cover Lexington and Richland counties. Or: online only.">
+          </div>
+
+          <div class="field full">
+            <label for="customers"><span class="key" aria-hidden="true">&#9733;</span> Who are your best customers? Who is this website really for?</label>
+            <textarea id="customers" name="best_customers"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="why-you">Why do customers choose you over the competition?</label>
+            <textarea id="why-you" name="why_customers_choose_you"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="current-site">Current website <span class="opt">(if you have one)</span></label>
+            <input id="current-site" name="current_website" type="url" inputmode="url" placeholder="https://" autocomplete="url">
+          </div>
+
+          <div class="field">
+            <label for="change">What do you want to change about it?</label>
+            <input id="change" name="what_to_change" type="text" placeholder="It looks old, the phone number is hard to find&hellip;">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 03 ---------------------------------------------------------- -->
+      <fieldset>
+        <legend><span class="legend-no">Section 03</span> What the site has to do</legend>
+
+        <div class="grid">
+          <div class="field full group">
+            <span class="group-label" id="action-label"><span class="key" aria-hidden="true">&#9733;</span> The one thing you most want a visitor to do</span>
+            <div class="opts opts-2col" role="group" aria-labelledby="action-label">
+              <div><label class="opt-row"><input type="radio" name="main_action" value="Call us"> <span>Call us</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="main_action" value="Book an appointment"> <span>Book an appointment</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="main_action" value="Buy something"> <span>Buy something</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="main_action" value="Request a quote"> <span>Request a quote</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="main_action" value="Visit in person"> <span>Visit in person</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="main_action" value="Sign up or subscribe"> <span>Sign up or subscribe</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="main_action" value="Donate"> <span>Donate</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="main_action" value="Something else"> <span>Something else</span></label></div>
+            </div>
+          </div>
+
+          <div class="field full">
+            <label for="other-goals">What else should it do for you?</label>
+            <textarea id="other-goals" name="other_goals" placeholder="Show our work, answer common questions, cut down phone calls, help us hire, get us found on Google&hellip;"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="search-terms">What would a customer type into Google to find a business like yours?</label>
+            <input id="search-terms" name="search_terms" type="text" placeholder="emergency plumber columbia sc, drain cleaning near me&hellip;">
+          </div>
+
+          <div class="field">
+            <label for="target">Target launch <span class="opt">(optional)</span></label>
+            <input id="target" name="target_launch" type="month">
+          </div>
+
+          <div class="field">
+            <label for="deadline-reason">Anything driving that date?</label>
+            <input id="deadline-reason" name="launch_reason" type="text" placeholder="A launch, an event, a busy season&hellip;">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 04 ---------------------------------------------------------- -->
+      <fieldset>
+        <legend><span class="legend-no">Section 04</span> Pages and content</legend>
+
+        <div class="grid">
+          <div class="field full group">
+            <span class="group-label" id="pages-label"><span class="key" aria-hidden="true">&#9733;</span> Which pages do you want? <span class="opt">(tick everything that applies)</span></span>
+            <div class="opts opts-2col" role="group" aria-labelledby="pages-label">
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Home"> <span>Home</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="About"> <span>About</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Services (one page)"> <span>Services, on one page</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="A page per service"> <span>A page for each service</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Shop"> <span>Shop</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Pricing"> <span>Pricing</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Menu"> <span>Menu</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Gallery or portfolio"> <span>Gallery or portfolio</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Team"> <span>Team</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Reviews"> <span>Reviews</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="FAQ"> <span>FAQ</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Blog"> <span>Blog or news</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Events"> <span>Events</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Careers"> <span>Careers</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Locations"> <span>Locations</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="pages" value="Contact"> <span>Contact</span></label></div>
+            </div>
+          </div>
+
+          <div class="field full">
+            <label for="other-pages">Any other pages?</label>
+            <input id="other-pages" name="other_pages" type="text">
+          </div>
+
+          <div class="field full">
+            <label for="services"><span class="key" aria-hidden="true">&#9733;</span> List your services or products</label>
+            <textarea id="services" name="services_and_products" aria-describedby="services-help"></textarea>
+            <p class="help" id="services-help">Add prices next to anything you want prices shown for.</p>
+          </div>
+
+          <div class="field full group">
+            <span class="group-label" id="copy-label">Who writes the words?</span>
+            <div class="opts" role="group" aria-labelledby="copy-label">
+              <div><label class="opt-row"><input type="radio" name="copy" value="We'll write it"> <span>We&rsquo;ll write it</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="copy" value="Reuse the current site"> <span>Reuse what&rsquo;s on the current site</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="copy" value="We'd like help"> <span>We&rsquo;d like help writing it</span></label></div>
+            </div>
+            <p class="help">Anything describing medical, legal or financial services is written or approved by you &mdash; we don&rsquo;t make professional claims on anyone&rsquo;s behalf.</p>
+          </div>
+
+          <div class="field full">
+            <label for="testimonials">Reviews or testimonials to feature</label>
+            <textarea id="testimonials" name="testimonials" placeholder="Paste them in, or tell us where they live: Google, Facebook, Yelp&hellip;"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="team">Should anyone on your team be on the site?</label>
+            <textarea id="team" name="team_members" placeholder="Names and roles"></textarea>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 05 ---------------------------------------------------------- -->
+      <fieldset>
+        <legend><span class="legend-no">Section 05</span> Features</legend>
+
+        <div class="grid">
+          <div class="field full group">
+            <span class="group-label" id="features-label"><span class="key" aria-hidden="true">&#9733;</span> Which of these do you need? <span class="opt">(tick everything that applies)</span></span>
+            <div class="opts opts-2col" role="group" aria-labelledby="features-label">
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Contact form"> <span>Contact form</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Quote request form"> <span>Quote request form</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Online booking"> <span>Online booking</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Online store or payments"> <span>Online store or payments</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Newsletter sign-up"> <span>Newsletter sign-up</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Blog"> <span>Blog</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Events calendar"> <span>Events calendar</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Photo gallery"> <span>Photo gallery</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Map and directions"> <span>Map and directions</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="Customer login"> <span>Customer login</span></label></div>
+              <div><label class="opt-row"><input type="checkbox" name="features" value="More than one language"> <span>More than one language</span></label></div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="other-features">Something else?</label>
+            <input id="other-features" name="other_features" type="text">
+          </div>
+
+          <div class="field">
+            <label for="integrations">Tools the site should connect to</label>
+            <input id="integrations" name="integrations" type="text" placeholder="Square, Shopify, Calendly, Mailchimp&hellip;">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 06 ---------------------------------------------------------- -->
+      <fieldset>
+        <legend><span class="legend-no">Section 06</span> Look and feel</legend>
+
+        <div class="grid">
+          <div class="field group">
+            <span class="group-label" id="logo-label"><span class="key" aria-hidden="true">&#9733;</span> Logo</span>
+            <div class="opts" role="group" aria-labelledby="logo-label">
+              <div><label class="opt-row"><input type="radio" name="logo" value="Yes, original files"> <span>Yes, we have the original files</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="logo" value="Only a small image"> <span>Only a small image</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="logo" value="No logo yet"> <span>No logo yet</span></label></div>
+            </div>
+          </div>
+
+          <div class="field group">
+            <span class="group-label" id="photos-label">Photos</span>
+            <div class="opts" role="group" aria-labelledby="photos-label">
+              <div><label class="opt-row"><input type="radio" name="photos" value="Professional photos"> <span>Professional photos</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="photos" value="Phone photos"> <span>Some, taken on a phone</span></label></div>
+              <div><label class="opt-row"><input type="radio" name="photos" value="None yet"> <span>None yet &mdash; we&rsquo;ll need advice</span></label></div>
+            </div>
+          </div>
+
+          <div class="field full">
+            <label for="brand">Brand colors or fonts</label>
+            <input id="brand" name="brand_colors_and_fonts" type="text" placeholder="Hex codes if you have them. &ldquo;The blue on our trucks&rdquo; works too.">
+          </div>
+
+          <div class="field full">
+            <label for="liked-sites"><span class="key" aria-hidden="true">&#9733;</span> Two or three websites you like, from any industry, and what you like about each</label>
+            <textarea id="liked-sites" name="websites_you_like"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="avoid">Anything you don&rsquo;t want? Sites, colors or styles to steer clear of</label>
+            <textarea id="avoid" name="things_to_avoid"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="feel">Three words for how the site should feel</label>
+            <input id="feel" name="three_words" type="text" placeholder="Warm, modern, premium, playful, trustworthy, bold&hellip;">
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 07 ---------------------------------------------------------- -->
+      <fieldset>
+        <legend><span class="legend-no">Section 07</span> The practical details</legend>
+        <p class="legend-note"><span class="key" aria-hidden="true">&#9733;</span> The contact details you want shown on the site. They can differ from yours above.</p>
+
+        <div class="grid">
+          <div class="field">
+            <label for="show-phone">Phone to show</label>
+            <input id="show-phone" name="phone_to_show" type="tel">
+          </div>
+
+          <div class="field">
+            <label for="show-email">Email to show</label>
+            <input id="show-email" name="email_to_show" type="email">
+          </div>
+
+          <div class="field">
+            <label for="show-address">Address, or service area only</label>
+            <input id="show-address" name="address_to_show" type="text">
+          </div>
+
+          <div class="field">
+            <label for="hours">Opening hours</label>
+            <input id="hours" name="opening_hours" type="text" placeholder="Mon&ndash;Fri 8&ndash;5, Sat 9&ndash;1">
+          </div>
+
+          <div class="field full">
+            <label for="social">Social media accounts to link to</label>
+            <textarea id="social" name="social_media"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="hosting">Who has your domain name and hosting right now?</label>
+            <input id="hosting" name="domain_and_hosting" type="text" aria-describedby="hosting-help" placeholder="GoDaddy, a previous developer, no idea&hellip;">
+            <p class="help" id="hosting-help">&ldquo;No idea&rdquo; is a common and completely fine answer. Don&rsquo;t send passwords &mdash; we&rsquo;ll sort access properly once you&rsquo;re a client.</p>
+          </div>
+
+          <div class="field full">
+            <label for="tier">Which package looks closest</label>
+            <select id="tier" name="tier">
+              <option value="">Not sure yet &mdash; help me work it out</option>
+              <option>Starter Site &mdash; $4,500</option>
+              <option>Business Site &mdash; $8,500</option>
+              <option>Custom Build &mdash; $15,000+</option>
+            </select>
+            <p class="help">Picking one doesn&rsquo;t commit you to it. If your answers point somewhere else, we&rsquo;ll say so.</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- 08 ---------------------------------------------------------- -->
+      <fieldset>
+        <legend><span class="legend-no">Section 08</span> Only if it applies</legend>
+        <p class="legend-note">Open whichever of these fits. Skip the rest.</p>
+
+        <details class="extra">
+          <summary>Healthcare practices <span class="summary-note">Providers, insurance, and the systems we link to</span></summary>
+          <div class="extra-body">
+            <section class="notice" aria-labelledby="phi-h">
+              <h2 id="phi-h">Please don&rsquo;t send patient information</h2>
+              <p>These questions are about your practice, never your patients. This form is not a secure channel for protected health information. If a question tempts you to paste in something from a patient record, leave it out.</p>
+            </section>
+            <div class="grid">
+              <div class="field full">
+                <label for="providers">Providers to feature: names, credentials and specialties</label>
+                <textarea id="providers" name="providers"></textarea>
+              </div>
+              <div class="field full">
+                <label for="insurance">Insurance plans you accept, and what new patients should know before their first visit</label>
+                <textarea id="insurance" name="insurance_and_new_patients"></textarea>
+              </div>
+              <div class="field full">
+                <label for="patient-systems">Patient portal, scheduling system or EHR the site should link to</label>
+                <input id="patient-systems" name="patient_systems" type="text" aria-describedby="patient-systems-help">
+                <p class="help" id="patient-systems-help">Vendor names only. We link to those systems; we don&rsquo;t build anything that stores patient records, and we don&rsquo;t sign Business Associate Agreements.</p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="extra">
+          <summary>Online stores <span class="summary-note">Products, delivery, and where you sell now</span></summary>
+          <div class="extra-body">
+            <div class="grid">
+              <div class="field full">
+                <label for="products">Roughly how many products, and do they come in options like sizes or colors?</label>
+                <textarea id="products" name="product_count_and_options"></textarea>
+              </div>
+              <div class="field full">
+                <label for="delivery">Physical, digital or services? How do you ship or deliver, and where to?</label>
+                <textarea id="delivery" name="delivery_and_shipping"></textarea>
+              </div>
+              <div class="field full">
+                <label for="existing-store">Selling anywhere already that we should build from or move off?</label>
+                <input id="existing-store" name="existing_store" type="text" placeholder="Shopify, Square, Etsy, Amazon&hellip;">
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="extra">
+          <summary>Online booking <span class="summary-note">What people book, and how</span></summary>
+          <div class="extra-body">
+            <div class="grid">
+              <div class="field full">
+                <label for="bookable">What can people book? How long does each take, and what does each cost?</label>
+                <textarea id="bookable" name="bookable_services"></textarea>
+              </div>
+              <div class="field">
+                <label for="booking-system">Booking system you already use</label>
+                <input id="booking-system" name="booking_system" type="text" placeholder="Square, Calendly, Vagaro, none yet&hellip;">
+              </div>
+              <div class="field">
+                <label for="booking-pay">Pay or leave a deposit when booking?</label>
+                <input id="booking-pay" name="booking_payments" type="text">
+              </div>
+            </div>
+          </div>
+        </details>
+      </fieldset>
+
+      <!-- 09 ---------------------------------------------------------- -->
+      <fieldset>
+        <legend><span class="legend-no">Section 09</span> Anything else</legend>
+
+        <div class="grid">
+          <div class="field full">
+            <label for="notes">Anything else we should know? <span class="opt">(optional)</span></label>
+            <textarea id="notes" name="anything_else" placeholder="Must-haves, pet peeves, things your last web designer got wrong&hellip;"></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="referral">How did you hear about us? <span class="opt">(optional)</span></label>
+            <input id="referral" name="referral" type="text">
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="submit">
+        <button class="btn" type="submit">Send this over</button>
+        <p>We use these answers to price and build your project and nothing else. No mailing list, no reselling, no tracking pixels on this page.</p>
+      </div>
+    </form>
+  </div>
+
+</main>
+
+<footer class="colophon">
+  <div class="shell">
+    <p>&copy; 2026 Cornerstone Designers</p>
+    <p>Fixed prices, published &nbsp;&middot;&nbsp; <a href="/#scope">See scope</a> &nbsp;&middot;&nbsp; <a href="/privacy">Privacy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

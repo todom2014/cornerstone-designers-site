@@ -1,0 +1,12 @@
+{
+  "name": "cornerstone-designers-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The website for Cornerstone Designers, a fixed-price web design studio in Newberry, SC.",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node tools/build-blog.mjs",
+    "dev": "netlify dev"
+  }
+}

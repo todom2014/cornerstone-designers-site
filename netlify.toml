@@ -1,0 +1,90 @@
+# Cornerstone Designers — deploy configuration
+# Static site, no build step. Netlify serves `public/` and runs the
+# functions in `netlify/functions/`.
+
+[build]
+  publish   = "public"
+  functions = "netlify/functions"
+  command   = ""
+
+[functions]
+  node_bundler = "esbuild"
+
+# ---------------------------------------------------------------------------
+# Security headers
+#
+# The site loads no third-party JavaScript and sets no cookies or storage, so
+# the policy can stay tight. Google Fonts is the only external origin; if that
+# ever changes, widen the CSP here rather than loosening it globally.
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options    = "nosniff"
+    X-Frame-Options           = "DENY"
+    Referrer-Policy           = "strict-origin-when-cross-origin"
+    Permissions-Policy        = "geolocation=(), microphone=(), camera=(), payment=(), interest-cohort=()"
+
+[[headers]]
+  for = "/media/*"
+
+  [headers.values]
+    # File names carry a version (waves-v1.mp4), so a new video gets a new name.
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ---------------------------------------------------------------------------
+# One address. The netlify.app subdomain serves the same site and would
+# compete with the real domain in search results, so it redirects there.
+# First in the list so it wins. Deploy previews use their own hostnames and
+# are unaffected. Added once cornerstonedesigners.com resolved (25 Sep 2026).
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from   = "https://cornerstone-designers.netlify.app/*"
+  to     = "https://cornerstonedesigners.com/:splat"
+  status = 301
+  force  = true
+
+# ---------------------------------------------------------------------------
+# Clean URLs
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from   = "/intake"
+  to     = "/intake.html"
+  status = 200
+
+[[redirects]]
+  from   = "/thank-you"
+  to     = "/thank-you.html"
+  status = 200
+
+[[redirects]]
+  from   = "/contact-received"
+  to     = "/contact-received.html"
+  status = 200
+
+[[redirects]]
+  from   = "/privacy"
+  to     = "/privacy.html"
+  status = 200
+
+[[redirects]]
+  from   = "/pay"
+  to     = "/pay.html"
+  status = 200
+
+[[redirects]]
+  from   = "/payment-received"
+  to     = "/payment-received.html"
+  status = 200
