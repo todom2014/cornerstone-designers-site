@@ -2,6 +2,7 @@
 title: How much does a small business website cost in South Carolina? (2026)
 description: Real 2026 price ranges for a small business website, from DIY builders to agencies, the yearly costs nobody quotes you, and our own published prices.
 date: 2026-09-26
+updated: 2026-10-06
 cluster: Small business websites
 category: Pricing
 keyword: small business website cost south carolina
@@ -73,7 +74,7 @@ We print our prices on the page, so here they are:
 
 Every package includes mobile-first design, WCAG 2.1 AA accessibility in the code, local SEO setup, training, and every account in your name. Monthly support is optional at $195 a month, and you can cancel any month.
 
-Payment is half to book your slot and half at launch. The price is fixed once the scope is written down: if the work takes us longer than we estimated, that's our cost, not yours. [See everything that's included](/#pricing).
+Payment is half to book your slot and half at launch, or six monthly payments on a Starter or Business Site ($795 or $1,500 a month). The price is fixed once the scope is written down: if the work takes us longer than we estimated, that's our cost, not yours. [See everything that's included](/#pricing).
 
 ## How to budget for your website
 
@@ -87,7 +88,7 @@ Payment is half to book your slot and half at launch. The price is fixed once th
 
 ### Is a $500 website worth it?
 
-It can be, for a business that just needs to exist online. At that price you're usually getting a template with your details in it, and you should check who owns the domain and whether the site keeps working if you stop paying.
+It can be, for a business that just needs to exist online. At that price you're usually getting a template with your details in it, and you should check who owns the domain and whether the site keeps working if you stop paying. If you already have a site and it only needs fixing, our $495 [website fix-up](/#fix-up) is another option.
 
 ### Do I have to pay every month for a website?
 

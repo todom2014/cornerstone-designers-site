@@ -573,6 +573,13 @@ p:last-child{margin-bottom:0}
   color:var(--ink-2);
   margin:0 0 1.4rem;
 }
+/* Payment-plan line: sits between the price and the timing line */
+.tier-plan{
+  font-family:var(--mono);
+  font-size:.8125rem;
+  color:var(--ink-2);
+  margin:0 0 .5rem;
+}
 /* :not([class]) so the tag, price and timing lines keep their own sizes */
 .tier > p:not([class]){font-size:.9375rem;color:var(--ink-2)}
 
@@ -1368,7 +1375,7 @@ p:last-child{margin-bottom:0}
           <h2 id="pricing-h">Three ways to buy a website</h2>
         </div>
         <div class="prose">
-          <p>Half to book the slot on the calendar, half on launch. No hourly billing, no change-order surprises. If the budget is tight we reduce the scope, not the rate &mdash; same quality, fewer pages.</p>
+          <p>Half to book the slot on the calendar, half on launch &mdash; or spread a Starter or Business Site over six monthly payments. No hourly billing, no change-order surprises. If the budget is tight we reduce the scope, not the rate &mdash; same quality, fewer pages.</p>
         </div>
       </div>
 
@@ -1377,6 +1384,7 @@ p:last-child{margin-bottom:0}
           <p class="tier-tag">Tier 01</p>
           <h3>Starter Site</h3>
           <p class="tier-price">$4,500</p>
+          <p class="tier-plan">or 6 monthly payments of $795</p>
           <p class="tier-time">1&ndash;2 weeks</p>
           <p>A small business, solo professional or new venture that needs a credible, fast, accessible site that brings in customers.</p>
           <ul>
@@ -1392,6 +1400,7 @@ p:last-child{margin-bottom:0}
           <p class="tier-tag">Tier 02 &nbsp;&middot;&nbsp; Most businesses</p>
           <h3>Business Site</h3>
           <p class="tier-price">$8,500</p>
+          <p class="tier-plan">or 6 monthly payments of $1,500</p>
           <p class="tier-time">3&ndash;4 weeks</p>
           <p>An established business with several services, team members or products that each need their own page to be found.</p>
           <ul>
@@ -1424,6 +1433,11 @@ p:last-child{margin-bottom:0}
       <div class="support">
         <p class="support-price">$195&thinsp;/&thinsp;mo</p>
         <p><strong>Optional support.</strong> Hosting, updates, security, accessibility spot-checks and small edits. Cancellable any month, and if you leave we migrate you out free. Nothing on this page requires it.</p>
+      </div>
+
+      <div class="support" id="fix-up">
+        <p class="support-price">$495</p>
+        <p><strong>Website fix-up.</strong> Not ready for a new site? We fix the one you have, on the platform it&rsquo;s already on. We check up to 10 pages and fix what we find: wrong phone numbers, emails or hours, broken links and buttons, text left over from a template, out-of-date dates, and pages that break on a phone. It&rsquo;s done within five business days of getting access, with a written list of every change. Anything bigger, like new pages or a redesign, gets a written price before we touch it. <a href="#contact">Ask for a fix-up</a> and choose &ldquo;Website fix-up&rdquo; on the form.</p>
       </div>
 
       <div class="included">
@@ -1624,7 +1638,7 @@ p:last-child{margin-bottom:0}
             <h3>Content and deposit</h3>
             <p class="when">Week 1 &nbsp;&middot;&nbsp; your turn</p>
           </div>
-          <p>Half the fee books your slot. We send one checklist of anything still missing: logo files, photographs, product or service details, logins for anything we&rsquo;re connecting. One list, not a drip of emails.</p>
+          <p>Half the fee, or the first monthly payment, books your slot. We send one checklist of anything still missing: logo files, photographs, product or service details, logins for anything we&rsquo;re connecting. One list, not a drip of emails.</p>
         </li>
         <li>
           <div>
@@ -1638,7 +1652,7 @@ p:last-child{margin-bottom:0}
             <h3>Launch and handover</h3>
             <p class="when">Week 4 &nbsp;&middot;&nbsp; together</p>
           </div>
-          <p>We go live on the agreed date, walk your team through it, and hand over every account in your name. Balance is due here. Then you are free to leave or to keep us on.</p>
+          <p>We go live on the agreed date, walk your team through it, and hand over every account in your name. Balance is due here. On a payment plan, the monthly payments simply carry on, and the hosting and files move into your name with the last one. Then you are free to leave or to keep us on.</p>
         </li>
       </ol>
     </div>
@@ -1722,7 +1736,7 @@ p:last-child{margin-bottom:0}
           <summary>Why not a $500 website?</summary>
           <div class="faq-answer">
             <p>Sometimes that is the right call, and a template or a DIY builder can be a fine start. At that price something has to give, though, and it is usually what you only notice later: who owns the domain and the hosting, whether the site works with a keyboard and a screen reader, whether anyone set up local search, and whether there is a written scope and a launch date.</p>
-            <p>Those are what our prices pay for, and they are in every tier. If $500 is the real budget, tell us. We will say plainly whether we are a fit and, if we are not, point you to a builder that is.</p>
+            <p>Those are what our prices pay for, and they are in every tier. If $500 is the real budget and you already have a site, our $495 fix-up may be all you need: we fix what&rsquo;s wrong with the site you have rather than building a new one. If you need a new site at that price, tell us. We will say plainly whether we are a fit and, if we are not, point you to a builder that is.</p>
           </div>
         </details>
 
@@ -1738,6 +1752,7 @@ p:last-child{margin-bottom:0}
           <summary>Who owns the site when it&rsquo;s finished?</summary>
           <div class="faq-answer">
             <p>You do, completely. The domain is registered in your business&rsquo;s name, the hosting account is yours, and you get the files. If you decide next year to move to another studio, you take everything with you and we help with the migration at no charge.</p>
+            <p>On a payment plan, the domain is still in your name from day one. The hosting account and the files move into your name with the last monthly payment.</p>
             <p>We do not build on a proprietary platform you can only leave by starting over. That is a business model, not a service.</p>
           </div>
         </details>
@@ -1747,6 +1762,22 @@ p:last-child{margin-bottom:0}
           <div class="faq-answer">
             <p>No. It is $195 a month, it is genuinely optional, and plenty of clients skip it. It covers hosting, updates, security, accessibility spot-checks and small edits &mdash; useful if nobody on your team wants to touch the site, unnecessary if someone does.</p>
             <p>You can start it later, stop it any month, and it has no effect on your ownership either way.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I pay monthly instead?</summary>
+          <div class="faq-answer">
+            <p>Yes, for a Starter or Business Site: six monthly payments of $795 or $1,500. That comes to $4,770 or $9,000 in total, a little more than paying in two halves. Custom Builds can be spread out too; we put the schedule in the written quote.</p>
+            <p>The first payment books your slot, the same way a deposit does. After that, Stripe emails you an invoice each month with a Pay button, and they stop after the sixth. The build runs on the same schedule either way, so a payment plan never slows your launch.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can you fix our current site instead of building a new one?</summary>
+          <div class="faq-answer">
+            <p>Often, yes. Our $495 fix-up covers up to 10 pages on the platform you already use, whether that&rsquo;s WordPress, Wix, Squarespace or most others: wrong contact details and hours, broken links, leftover template text, out-of-date dates, and pages that break on a phone.</p>
+            <p>We look first and send you the list of what we&rsquo;ll fix before you pay anything. You add us as a user on your site, so you never have to send a password. If what&rsquo;s wrong goes deeper than a fix-up, we&rsquo;ll say so and quote it in writing, and nothing changes unless you say yes.</p>
           </div>
         </details>
 
@@ -1904,6 +1935,7 @@ p:last-child{margin-bottom:0}
                 <option>An online store</option>
                 <option>A booking or appointments site</option>
                 <option>A landing page for a launch or campaign</option>
+                <option>Fixes to the site we have now</option>
               </select>
             </div>
 
@@ -1915,6 +1947,7 @@ p:last-child{margin-bottom:0}
                 <option value="Business Site — $8,500">Business Site &mdash; $8,500</option>
                 <option value="Custom Build — $15,000+">Custom Build &mdash; $15,000+</option>
                 <option value="Support only — $195/mo">Support only &mdash; $195/mo</option>
+                <option value="Website fix-up — $495">Website fix-up &mdash; $495</option>
               </select>
             </div>
 
@@ -1957,7 +1990,7 @@ p:last-child{margin-bottom:0}
   "telephone": "+1-803-768-5337",
   "address": { "@type": "PostalAddress", "addressLocality": "Newberry", "addressRegion": "SC", "addressCountry": "US" },
   "founder": { "@type": "Person", "name": "Taylor Odom", "jobTitle": "Founder, Owner & Web Developer", "sameAs": ["https://www.linkedin.com/in/taylor-odom-531a87297/"] },
-  "priceRange": "$4,500–$15,000+",
+  "priceRange": "$495–$15,000+",
   "knowsAbout": [
     "Web design",
     "Small business websites",
@@ -1983,7 +2016,8 @@ p:last-child{margin-bottom:0}
     "itemListElement": [
       { "@type": "Offer", "name": "Starter Site", "price": "4500", "priceCurrency": "USD", "description": "Small business or solo professional, 4–5 pages, 1–2 weeks." },
       { "@type": "Offer", "name": "Business Site", "price": "8500", "priceCurrency": "USD", "description": "Established business, 8–12 pages, a page per service or product line, booking or a small store, 3–4 weeks." },
-      { "@type": "Offer", "name": "Custom Build", "price": "15000", "priceCurrency": "USD", "description": "Multi-location, full e-commerce or custom features, integrations, full accessibility audit, 6–8 weeks." }
+      { "@type": "Offer", "name": "Custom Build", "price": "15000", "priceCurrency": "USD", "description": "Multi-location, full e-commerce or custom features, integrations, full accessibility audit, 6–8 weeks." },
+      { "@type": "Offer", "name": "Website fix-up", "price": "495", "priceCurrency": "USD", "description": "Fixes to an existing website on the platform it already uses: up to 10 pages, done within five business days of access." }
     ]
   }
 }

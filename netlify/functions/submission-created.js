@@ -165,7 +165,7 @@ const CORE_SECTIONS = [
       { q: "Which social media accounts should we link to?" },
       { q: "Who has your domain name and hosting right now? \"No idea\" is a fine answer. Please don't send passwords." },
       { q: "Who makes the final call on the site, and who should we talk to day to day?" },
-      { q: "Which package looks closest: Starter Site ($4,500), Business Site ($8,500), Custom Build ($15,000+), or not sure yet?" },
+      { q: "Which package looks closest: Starter Site ($4,500), Business Site ($8,500), Custom Build ($15,000+), or not sure yet? And would you rather pay in two halves, or in six monthly payments?" },
     ],
   },
 ];
@@ -234,6 +234,11 @@ const PRICES = [
   ["Custom Build", "$15,000+", "6-8 weeks", "6&ndash;8 wks"],
 ];
 
+// The payment-plan option, shown under the prices. Keep in step with the
+// pricing section of public/index.html and with Stripe (see PAYMENTS.md).
+const PLAN_TEXT = "Starter and Business Sites can also be paid in six monthly payments: $795 or $1,500 a month.";
+const PLAN_HTML = "Starter and Business Sites can also be paid in six monthly payments: $795 or $1,500 a month.";
+
 const PHI_TEXT =
   "One thing worth saying plainly: please don't send us anything from a patient record. We don't handle protected health information, and email isn't a secure channel for it.";
 const PHI_HTML = `<span style="color:#98432F;">One thing worth saying plainly:</span> please don&rsquo;t send us anything from a patient record. We don&rsquo;t handle protected health information, and email isn&rsquo;t a secure channel for it.`;
@@ -287,7 +292,7 @@ function contactEmail(data) {
       "",
       "Rather talk it through? Reply and say so, and we'll call you.",
     ].join("\n"),
-    ["THE PRICES, AGAIN", "", ...PRICES.map(([name, price, time]) => `  ${name.padEnd(15)} ${price.padEnd(9)} ${time}`)].join("\n"),
+    ["THE PRICES, AGAIN", "", ...PRICES.map(([name, price, time]) => `  ${name.padEnd(15)} ${price.padEnd(9)} ${time}`), "", PLAN_TEXT].join("\n"),
     healthcare ? PHI_TEXT : null,
     SIGN_OFF_TEXT,
   ]
@@ -335,6 +340,7 @@ function contactEmail(data) {
           `<tr><td style="padding:9px 0;${i < PRICES.length - 1 ? "border-bottom:1px solid #C3C9D3;" : ""}">${name}</td><td align="right" style="padding:9px 0;${i < PRICES.length - 1 ? "border-bottom:1px solid #C3C9D3;" : ""}">${price} &middot; ${timeHtml}</td></tr>`
       ).join("") +
       `</table>` +
+      p(PLAN_HTML) +
       (healthcare ? p(PHI_HTML) : "") +
       SIGN_OFF_HTML,
     {
@@ -425,8 +431,107 @@ function intakeEmail(data, payload) {
   return { subject: "We've got your answers — here's what happens next", text, html };
 }
 
+/* -------------------------------------------------------------------------
+   Website fix-up ($495)
+   ---------------------------------------------------------------------- */
+
+/**
+ * True when the contact form asked for a fix-up rather than a new site: the
+ * "Website fix-up — $495" tier, or "Fixes to the site we have now" as the
+ * kind of site. Those people get the short fix-up email below instead of the
+ * full build questionnaire.
+ */
+const isFixUp = (data) =>
+  /fix-?up/i.test(flatten(data.tier)) || /^fixes to the site/i.test(flatten(data.site_type));
+
+const FIXUP_QUESTIONS = [
+  { essential: true, q: "What's your website address?" },
+  { essential: true, q: "What is it built on, if you know? WordPress, Wix, Squarespace, GoDaddy, Shopify or something else. \"Not sure\" is fine." },
+  { q: "What do you already know is wrong, or what have customers mentioned?" },
+  { q: "Is there anything we shouldn't change?" },
+  { essential: true, q: "Who can add us as a user on the site? We'll send the steps for your platform. Please don't email us passwords." },
+];
+
+/** Contact form, fix-up chosen → five short questions about the current site. */
+function fixUpEmail(data) {
+  const hi = greeting(data.name);
+  const business = flatten(data.business) || flatten(data.practice);
+  const healthcare = isHealthcare(data);
+
+  const thanksText = business
+    ? `Thanks for asking about a fix-up for ${business}. This is a real reply from a real person — we've read what you sent.`
+    : "Thanks for asking about a website fix-up. This is a real reply from a real person — we've read what you sent.";
+  const thanksHtml = business
+    ? `Thanks for asking about a fix-up for <strong style="color:#0F1A3D;">${esc(business)}</strong>. This is a real reply from a real person &mdash; we&rsquo;ve read what you sent.`
+    : "Thanks for asking about a website fix-up. This is a real reply from a real person &mdash; we&rsquo;ve read what you sent.";
+
+  const nextText = [
+    "WHAT HAPPENS NEXT",
+    "",
+    "1. Within two working days of your answers, we look over your site and send you the list of what we'll fix. Nothing is owed until you've seen it.",
+    "2. If it's a fit, the fix-up is $495, paid on our payments page: " + SITE + "/pay#fix-up",
+    "3. Once we have access, it's done within five business days, and you get a written list of every change.",
+    "",
+    "If something needs more than a fix, like new pages or a redesign, we'll say so and quote it in writing first. Nothing changes unless you say yes.",
+  ].join("\n");
+
+  const text = [
+    hi,
+    thanksText,
+    "A few quick questions so we can check your site properly. Hit reply and answer under each one; half-sentences are fine. The ★ ones matter most.",
+    FIXUP_QUESTIONS.map((x, i) => `${i + 1}. ${x.essential ? "★ " : ""}${x.q}`).join("\n\n"),
+    nextText,
+    healthcare ? PHI_TEXT : null,
+    SIGN_OFF_TEXT,
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+
+  const rows =
+    `<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;margin:0 0 8px 0;">` +
+    FIXUP_QUESTIONS.map(
+      (x, i) =>
+        `<tr>
+           <td style="padding:10px 12px 10px 0;border-bottom:1px solid #C3C9D3;vertical-align:top;width:28px;font:400 12px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#1E3BB0;">${String(i + 1).padStart(2, "0")}</td>
+           <td style="padding:10px 0;border-bottom:1px solid #C3C9D3;vertical-align:top;color:#0F1A3D;">${x.essential ? `<span style="color:#1E3BB0;" aria-label="Essential">&#9733;</span> ` : ""}${esc(x.q)}</td>
+         </tr>`
+    ).join("") +
+    `</table>`;
+
+  const html = layout(
+    p(esc(hi)) +
+      p(thanksHtml) +
+      p(
+        "A few quick questions so we can check your site properly. <strong style=\"color:#0F1A3D;\">Hit reply</strong> and answer under each one; half-sentences are fine. The <span style=\"color:#1E3BB0;\">&#9733;</span> ones matter most."
+      ) +
+      h("Your current site") +
+      rows +
+      h("What happens next") +
+      p(
+        "<strong style=\"color:#0F1A3D;\">We send you the list first.</strong> Within two working days of your answers, we look over your site and send you the list of what we&rsquo;ll fix. Nothing is owed until you&rsquo;ve seen it."
+      ) +
+      p(
+        "<strong style=\"color:#0F1A3D;\">Then it&rsquo;s $495, fixed.</strong> If it&rsquo;s a fit, you pay on our payments page. Once we have access, it&rsquo;s done within five business days, and you get a written list of every change."
+      ) +
+      button(`${SITE}/pay#fix-up`, "The payments page") +
+      p(
+        "If something needs more than a fix, like new pages or a redesign, we&rsquo;ll say so and quote it in writing first. Nothing changes unless you say yes."
+      ) +
+      (healthcare ? p(PHI_HTML) : "") +
+      SIGN_OFF_HTML,
+    {
+      healthcare,
+      preheader: "Five quick questions about your current site. We send the list of fixes before you pay anything.",
+    }
+  );
+
+  return { subject: "Your website fix-up — a few quick questions", text, html };
+}
+
 const TEMPLATES = {
-  contact: contactEmail,
+  // A fix-up request gets the short fix-up email; everything else gets the
+  // full build questionnaire.
+  contact: (data) => (isFixUp(data) ? fixUpEmail(data) : contactEmail(data)),
   "project-intake": intakeEmail,
   // The form's name before the rebrand. Kept so a stale cached page still
   // gets a receipt; safe to delete once nothing submits under it.

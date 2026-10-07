@@ -2,6 +2,7 @@
 title: "Choosing a web designer in Columbia, SC: what to look for"
 description: How to choose a web designer in Columbia, SC: whether local matters, what a Midlands business site needs, how to vet a designer, and free help.
 date: 2026-10-03
+updated: 2026-10-06
 cluster: Small business websites
 category: Hiring a designer
 keyword: web designer columbia sc
@@ -67,7 +68,7 @@ Our own prices are [published on our homepage](/#pricing):
 - **Business Site, $8,500:** 3–4 weeks, 8–12 pages, with service pages, team pages, and booking or a small store.
 - **Custom Build, $15,000+:** 6–8 weeks, for multiple locations, full e-commerce or integrations.
 
-Each one is a fixed price for the written scope, with half to book your slot and half at launch. More detail is on our [small business website design](/services/small-business-website-design/) page.
+Each one is a fixed price for the written scope, with half to book your slot and half at launch, or six monthly payments on a Starter or Business Site. More detail is on our [small business website design](/services/small-business-website-design/) page.
 
 ## Frequently asked questions
 

@@ -38,7 +38,9 @@ Redesigns use the same published packages as new sites:
 | Business Site | $8,500 | 3–4 weeks | 8–12 pages, service pages, booking or a small store |
 | Custom Build | $15,000+ | 6–8 weeks | Multiple locations, large stores, integrations |
 
-You get the price in writing, with the scope and a launch date, before anything starts. Half books your slot, half is due at launch.
+You get the price in writing, with the scope and a launch date, before anything starts. Half books your slot, half is due at launch, or you can spread a Starter or Business Site over six monthly payments.
+
+Only need a few things fixed? Our $495 [website fix-up](/#fix-up) covers up to 10 pages on the platform you already use: contact details and hours, broken links, leftover template text, old dates and pages that break on a phone. No redesign needed.
 
 ## How a redesign runs
 

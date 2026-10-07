@@ -44,7 +44,7 @@ Monthly support is optional at $195 a month. If you want the wider picture, we w
 3. **We build it where you can see it.** A private preview link as it comes together, with two rounds of changes included.
 4. **We launch and hand it over.** Everything in your name, and a walkthrough so you're comfortable running it.
 
-Half the fee books your slot and the other half is due at launch. If the work takes us longer than we estimated, that's on us.
+Half the fee books your slot and the other half is due at launch, or you can spread a Starter or Business Site over six monthly payments of $795 or $1,500. If the work takes us longer than we estimated, that's on us.
 
 ## Who it's for
 

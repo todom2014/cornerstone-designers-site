@@ -2,6 +2,7 @@
 title: 7 signs your website needs a redesign
 description: Seven signs your website needs a redesign, how to check each one yourself in a few minutes, and when a smaller fix will do instead.
 date: 2026-09-29
+updated: 2026-10-06
 cluster: Website redesigns
 category: Redesigns
 keyword: signs your website needs a redesign
@@ -65,7 +66,7 @@ If you do roofing, gutters and siding but your site has one "Services" page list
 
 ## Can you fix these without a full redesign?
 
-Often, yes. A content problem or two (an old phone number, stale hours, a broken link) is quick work for whoever has access.
+Often, yes. A content problem or two (an old phone number, stale hours, a broken link) is quick work for whoever has access. If nobody on your team has the time, our $495 [website fix-up](/#fix-up) handles that kind of work on the platform you already use.
 
 A redesign makes sense when:
 
@@ -96,7 +97,7 @@ With us, a redesign uses the same [published packages](/#pricing) as a new site:
 - **Business Site, $8,500:** 3–4 weeks, 8–12 pages, with service pages, team pages, and booking or a small store.
 - **Custom Build, $15,000+:** 6–8 weeks, for multiple locations, full e-commerce or integrations.
 
-Every build is mobile-first, built to WCAG 2.1 AA in the code, and registered in your name. The price is fixed for the written scope: half to book your slot, half at launch. For how that compares with other options, see [what a small business website costs in South Carolina](/blog/small-business-website-cost-south-carolina/).
+Every build is mobile-first, built to WCAG 2.1 AA in the code, and registered in your name. The price is fixed for the written scope: half to book your slot and half at launch, or six monthly payments on a Starter or Business Site. For how that compares with other options, see [what a small business website costs in South Carolina](/blog/small-business-website-cost-south-carolina/).
 
 ## Frequently asked questions
 
